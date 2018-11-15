@@ -1,6 +1,6 @@
 package equalsverifier.prefabvalues;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.prefabvalues.factories.PrefabValueFactory;
 
 import java.util.HashMap;
 import java.util.Iterator;

@@ -1,20 +1,20 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.AbstractGenericFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.PrefabValueFactory;
-import nl.jqno.equalsverifier.internal.reflection.ConditionalInstantiator;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.prefabvalues.factories.AbstractGenericFactory;
+import equalsverifier.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.reflection.ConditionalInstantiator;
 
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories.copy;
-import static nl.jqno.equalsverifier.internal.reflection.Util.*;
+import static equalsverifier.prefabvalues.factories.Factories.copy;
+import static equalsverifier.reflection.Util.*;
 
 public final class JavaFxFactoryProvider implements FactoryProvider {
     private static final String JAVAFX_COLLECTIONS_PACKAGE = "javafx.collections.";

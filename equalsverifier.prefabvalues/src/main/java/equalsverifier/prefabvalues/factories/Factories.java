@@ -1,7 +1,7 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.Func.Func1;
-import nl.jqno.equalsverifier.Func.Func2;
+import equalsverifier.Func.Func1;
+import equalsverifier.Func.Func2;
 
 import java.util.Collection;
 import java.util.Map;
