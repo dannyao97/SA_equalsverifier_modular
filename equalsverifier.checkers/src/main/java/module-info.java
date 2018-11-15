@@ -3,5 +3,5 @@ module equalsverifier.checkers {
 	requires equalsverifier.utils;
 	requires equalsverifier.reflection;
 	requires equalsverifier.prefabvalues;
-	requires com.github.spotbugs;
+	requires com.github.spotbugs.annotations;
 }
