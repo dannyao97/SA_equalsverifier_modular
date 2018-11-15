@@ -1,9 +1,9 @@
 package equalsverifier;
 
-import nl.jqno.equalsverifier.Func.Func1;
-import nl.jqno.equalsverifier.Func.Func2;
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.util.PrefabValuesApi;
+import equalsverifier.Func.Func1;
+import equalsverifier.Func.Func2;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.utils.PrefabValuesApi;
 
 import java.util.Collections;
 import java.util.EnumSet;

@@ -1,11 +1,11 @@
 package equalsverifier;
 
-import nl.jqno.equalsverifier.Func.Func1;
-import nl.jqno.equalsverifier.Func.Func2;
-import nl.jqno.equalsverifier.internal.checkers.*;
-import nl.jqno.equalsverifier.internal.exceptions.MessagingException;
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.util.*;
+import equalsverifier.Func.Func1;
+import equalsverifier.Func.Func2;
+import equalsverifier.checkers.*;
+import equalsverifier.exceptions.MessagingException;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.utils.*;
 import org.objectweb.asm.Type;
 
 import java.util.*;

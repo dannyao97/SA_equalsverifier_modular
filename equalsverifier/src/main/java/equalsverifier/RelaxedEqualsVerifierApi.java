@@ -2,8 +2,8 @@ package equalsverifier;
 
 import java.util.List;
 
-import static nl.jqno.equalsverifier.internal.util.ListBuilders.buildListOfAtLeastOne;
-import static nl.jqno.equalsverifier.internal.util.ListBuilders.listContainsDuplicates;
+import static equalsverifier.utils.ListBuilders.buildListOfAtLeastOne;
+import static equalsverifier.utils.ListBuilders.listContainsDuplicates;
 
 /**
  * API class for
