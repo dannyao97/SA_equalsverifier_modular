@@ -1,12 +1,12 @@
 package equalsverifier.checkers.fieldchecks;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCache;
-import nl.jqno.equalsverifier.internal.reflection.annotations.SupportedAnnotations;
-import nl.jqno.equalsverifier.internal.util.Configuration;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.FieldAccessor;
+import equalsverifier.reflection.annotations.AnnotationCache;
+import equalsverifier.reflection.annotations.SupportedAnnotations;
+import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Formatter;
 
 import static nl.jqno.equalsverifier.internal.util.Assert.fail;
 

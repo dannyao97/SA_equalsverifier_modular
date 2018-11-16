@@ -1,7 +1,7 @@
 package equalsverifier.exceptions;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
+import equalsverifier.prefabvalues.TypeTag;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;

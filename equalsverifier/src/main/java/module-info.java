@@ -7,4 +7,6 @@ module equalsverifier {
 	requires equalsverifier.prefabvalues.factoryproviders;
 	requires equalsverifier.utils;
     requires org.objectweb.asm;
+
+    requires equalsverifier.service;
 }

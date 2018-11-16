@@ -1,14 +1,14 @@
 package equalsverifier.utils;
 
-import nl.jqno.equalsverifier.Warning;
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.prefabvalues.JavaApiPrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCache;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCacheBuilder;
-import nl.jqno.equalsverifier.internal.reflection.annotations.SupportedAnnotations;
+import equalsverifier.service.Warning;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.JavaApiPrefabValues;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.reflection.annotations.AnnotationCache;
+import equalsverifier.reflection.annotations.AnnotationCacheBuilder;
+import equalsverifier.reflection.annotations.SupportedAnnotations;
 
 import java.util.*;
 

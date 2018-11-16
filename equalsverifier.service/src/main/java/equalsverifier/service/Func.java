@@ -1,4 +1,4 @@
-package equalsverifier;
+package equalsverifier.service;
 
 import java.util.List;
 

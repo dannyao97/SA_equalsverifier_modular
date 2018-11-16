@@ -1,14 +1,14 @@
 package equalsverifier.checkers;
 
-import nl.jqno.equalsverifier.Warning;
-import nl.jqno.equalsverifier.internal.exceptions.ReflectionException;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.reflection.ObjectAccessor;
-import nl.jqno.equalsverifier.internal.reflection.annotations.SupportedAnnotations;
-import nl.jqno.equalsverifier.internal.util.CachedHashCodeInitializer;
-import nl.jqno.equalsverifier.internal.util.Configuration;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.Warning;
+import equalsverifier.exceptions.ReflectionException;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.reflection.ObjectAccessor;
+import equalsverifier.reflection.annotations.SupportedAnnotations;
+import equalsverifier.utils.CachedHashCodeInitializer;
+import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;

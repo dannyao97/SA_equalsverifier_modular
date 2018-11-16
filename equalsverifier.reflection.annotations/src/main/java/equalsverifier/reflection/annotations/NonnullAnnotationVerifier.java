@@ -2,7 +2,7 @@ package equalsverifier.reflection.annotations;
 
 import java.lang.reflect.Field;
 
-import static nl.jqno.equalsverifier.internal.reflection.annotations.SupportedAnnotations.*;
+import static equalsverifier.reflection.annotations.SupportedAnnotations.*;
 
 /**
  * Utility class that checks whether a field is marked with an Nonnull

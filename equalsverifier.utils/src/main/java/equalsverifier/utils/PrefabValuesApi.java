@@ -1,13 +1,13 @@
 package equalsverifier.utils;
 
-import nl.jqno.equalsverifier.Func.Func1;
-import nl.jqno.equalsverifier.Func.Func2;
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.PrefabValueFactory;
-import nl.jqno.equalsverifier.internal.reflection.ObjectAccessor;
+import equalsverifier.service.Func.Func1;
+import equalsverifier.service.Func.Func2;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.reflection.ObjectAccessor;
 
-import static nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories.simple;
-import static nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories.values;
+import static equalsverifier.prefabvalues.factories.Factories.simple;
+import static equalsverifier.prefabvalues.factories.Factories.values;
 
 public final class PrefabValuesApi {
     private PrefabValuesApi() {}

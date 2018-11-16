@@ -1,11 +1,11 @@
 package equalsverifier.prefabvalues;
 
-import nl.jqno.equalsverifier.internal.exceptions.EqualsVerifierBugException;
+import equalsverifier.exceptions.EqualsVerifierBugException;
 
 import java.lang.reflect.*;
 import java.util.*;
 
-import static nl.jqno.equalsverifier.internal.reflection.Util.classForName;
+import static equalsverifier.reflection.Util.classForName;
 
 /**
  * Represents a generic type, including raw type and generic type parameters.

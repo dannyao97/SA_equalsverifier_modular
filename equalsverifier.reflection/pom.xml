@@ -13,5 +13,57 @@
 		<version>1.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
+    <properties>
+        <spotbugs.version>3.1.8</spotbugs.version>
+        <spotbugs.maven.version>3.1.7</spotbugs.maven.version>
+        <spotbugs.effort>Max</spotbugs.effort>
+        <spotbugs.threshold>Low</spotbugs.threshold>
+    </properties>
+    <dependencies>
+
+
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+            <version>${spotbugs.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs.maven.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>${spotbugs.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <effort>${spotbugs.effort}</effort>
+                    <threshold>${spotbugs.threshold}</threshold>
+                    <xmlOutput>true</xmlOutput>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>run-spotbugs</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

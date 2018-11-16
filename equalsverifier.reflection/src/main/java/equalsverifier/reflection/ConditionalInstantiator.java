@@ -1,13 +1,13 @@
 package equalsverifier.reflection;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import nl.jqno.equalsverifier.internal.exceptions.ReflectionException;
+import equalsverifier.exceptions.ReflectionException;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import static nl.jqno.equalsverifier.internal.reflection.Util.classForName;
+import static equalsverifier.reflection.Util.classForName;
 
 /**
  * Allows instantiation of classes that may or may not be present on the classpath.

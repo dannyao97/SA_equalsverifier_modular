@@ -1,11 +1,11 @@
 package equalsverifier.checkers.fieldchecks;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
-import nl.jqno.equalsverifier.internal.reflection.FieldIterable;
-import nl.jqno.equalsverifier.internal.reflection.ObjectAccessor;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.FieldAccessor;
+import equalsverifier.reflection.FieldIterable;
+import equalsverifier.reflection.ObjectAccessor;
+import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Field;
 

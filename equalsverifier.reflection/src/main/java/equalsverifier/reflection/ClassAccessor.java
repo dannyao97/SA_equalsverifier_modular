@@ -1,10 +1,10 @@
 package equalsverifier.reflection;
 
-import nl.jqno.equalsverifier.internal.exceptions.ReflectionException;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCache;
-import nl.jqno.equalsverifier.internal.reflection.annotations.NonnullAnnotationVerifier;
+import equalsverifier.exceptions.ReflectionException;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.annotations.AnnotationCache;
+import equalsverifier.reflection.annotations.NonnullAnnotationVerifier;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

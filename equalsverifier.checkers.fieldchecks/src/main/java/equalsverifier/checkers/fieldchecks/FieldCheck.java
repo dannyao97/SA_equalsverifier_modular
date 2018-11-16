@@ -1,6 +1,6 @@
 package equalsverifier.checkers.fieldchecks;
 
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
+import equalsverifier.reflection.FieldAccessor;
 
 @FunctionalInterface
 public interface FieldCheck {

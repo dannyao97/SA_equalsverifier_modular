@@ -1,12 +1,12 @@
-package equalsverifier.utils;
+package equalsverifier.service;
+
+//import equalsverifier.formatService.formatService;
 
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.reflection.ObjectAccessor;
 
 import java.lang.reflect.Field;
 import java.util.regex.Matcher;
-
-//import equalsverifier.formatService.formatService;
 
 /**
  * Formats a string with the contents of one or more objects.
@@ -16,7 +16,7 @@ import java.util.regex.Matcher;
  * representation of the object, containing its class name and
  * the contents of its fields.
  */
-public final class Formatter  {
+public final class Formatter {
 
     private final String message;
     private Object[] objects;
