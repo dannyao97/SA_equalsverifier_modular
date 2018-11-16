@@ -6,6 +6,8 @@ module equalsverifier.utils {
     requires equalsverifier.service;
     requires equalsverifier.exceptions;
     requires equalsverifier.reflection;
+    requires equalsverifier.prefabvalues;
+   // requires equalsverifier.prefabvalues.factories;
 
   //  requires equalsverifier.formatService;
   //  provides equalsverifier.formatService.formatService with equalsverifier.utils.Formatter;

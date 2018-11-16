@@ -1,19 +1,21 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
-import com.google.common.collect.*;
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.AbstractGenericFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.EnumMapFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.EnumSetFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories;
+import com.google.common.collect;
+
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.prefabvalues.factories.AbstractGenericFactory;
+import equalsverifier.prefabvalues.factories.EnumMapFactory;
+import equalsverifier.prefabvalues.factories.EnumSetFactory;
+import equalsverifier.prefabvalues.factories.Factories;
 
 import java.util.*;
 import java.util.function.Supplier;
 
-import static nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories.*;
+import static equalsverifier.prefabvalues.factories.Factories.*;
 
 public final class GuavaFactoryProvider implements FactoryProvider {
     private static final Comparator<Object> OBJECT_COMPARATOR = Comparator.comparingInt(Object::hashCode);

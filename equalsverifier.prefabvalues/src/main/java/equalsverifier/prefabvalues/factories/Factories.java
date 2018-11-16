@@ -1,7 +1,7 @@
 package equalsverifier.prefabvalues.factories;
 
-import equalsverifier.Func.Func1;
-import equalsverifier.Func.Func2;
+import equalsverifier.service.Func.Func1;
+import equalsverifier.service.Func.Func2;
 
 import java.util.Collection;
 import java.util.Map;
@@ -18,7 +18,7 @@ public final class Factories {
     }
 
     public static <A, T> PrefabValueFactory<T> simple(Func1<A, T> factory, Supplier<T> emptyFactory) {
-        return new SimpleGenericFactory<>(factory, emptyFactory);
+        return new SimpleGenericFactory<T>(factory, emptyFactory);
     }
 
     public static <A, B, T> PrefabValueFactory<T> simple(Func2<A, B, T> factory, Supplier<T> emptyFactory) {

@@ -1,6 +1,6 @@
 package equalsverifier.prefabvalues.factories;
 
-import equalsverifier.Func;
+import equalsverifier.service.Func;
 import equalsverifier.prefabvalues.PrefabValues;
 import equalsverifier.prefabvalues.Tuple;
 import equalsverifier.prefabvalues.TypeTag;
@@ -20,7 +20,7 @@ public class SimpleGenericFactory<T> extends AbstractGenericFactory<T> {
         this.emptyFactory = emptyFactory;
     }
 
-    @Override
+    //@Override
     public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
         LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
 

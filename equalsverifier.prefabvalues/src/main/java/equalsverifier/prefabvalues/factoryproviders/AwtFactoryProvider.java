@@ -1,13 +1,14 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.FactoryCache;
 
 import java.awt.*;
 import java.awt.color.ColorSpace;
 import java.awt.color.ICC_ColorSpace;
 import java.awt.color.ICC_Profile;
 
-import static nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories.values;
+import static equalsverifier.prefabvalues.factories.Factories.values;
 
 public final class AwtFactoryProvider implements FactoryProvider {
 

@@ -1,10 +1,10 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.reflection.FieldIterable;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.reflection.FieldIterable;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
