@@ -1,7 +1,7 @@
 package equalsverifier.reflection.annotations;
 
-import nl.jqno.equalsverifier.internal.reflection.FieldIterable;
-import nl.jqno.equalsverifier.internal.reflection.SuperclassIterable;
+import equalsverifier.reflection.FieldIterable;
+import equalsverifier.reflection.SuperclassIterable;
 import org.objectweb.asm.*;
 
 import java.io.IOException;

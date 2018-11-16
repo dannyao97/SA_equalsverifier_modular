@@ -1,8 +1,8 @@
 package equalsverifier.checkers.fieldchecks;
 
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
-import nl.jqno.equalsverifier.internal.util.CachedHashCodeInitializer;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.reflection.FieldAccessor;
+import equalsverifier.utils.CachedHashCodeInitializer;
+import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Array;
 

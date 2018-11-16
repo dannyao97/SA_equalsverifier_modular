@@ -1,6 +1,8 @@
 package equalsverifier.utils;
 
-import nl.jqno.equalsverifier.internal.exceptions.AssertionException;
+import equalsverifier.exceptions.AssertionException;
+
+import equalsverifier.service.Formatter;
 
 /**
  * Alternative for org.junit.Assert, so we can assert things without having a

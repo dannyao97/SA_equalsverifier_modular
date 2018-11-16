@@ -1,10 +1,10 @@
 package equalsverifier.checkers.fieldchecks;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
-import nl.jqno.equalsverifier.internal.reflection.annotations.NonnullAnnotationVerifier;
-import nl.jqno.equalsverifier.internal.util.Configuration;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.reflection.FieldAccessor;
+import equalsverifier.reflection.annotations.NonnullAnnotationVerifier;
+import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Field;
 

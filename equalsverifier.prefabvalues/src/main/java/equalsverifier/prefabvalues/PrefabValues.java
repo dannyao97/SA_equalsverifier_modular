@@ -1,9 +1,9 @@
 package equalsverifier.prefabvalues;
 
-import nl.jqno.equalsverifier.internal.exceptions.RecursionException;
-import nl.jqno.equalsverifier.internal.exceptions.ReflectionException;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.FallbackFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.exceptions.RecursionException;
+import equalsverifier.exceptions.ReflectionException;
+import equalsverifier.prefabvalues.factories.FallbackFactory;
+import equalsverifier.prefabvalues.factories.PrefabValueFactory;
 
 import java.util.Arrays;
 import java.util.HashMap;

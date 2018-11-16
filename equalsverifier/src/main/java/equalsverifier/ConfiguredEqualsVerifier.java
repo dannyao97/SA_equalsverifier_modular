@@ -1,7 +1,7 @@
 package equalsverifier;
 
-import equalsverifier.Func.Func1;
-import equalsverifier.Func.Func2;
+import equalsverifier.service.Func.Func1;
+import equalsverifier.service.Func.Func2;
 import equalsverifier.prefabvalues.FactoryCache;
 import equalsverifier.utils.PrefabValuesApi;
 

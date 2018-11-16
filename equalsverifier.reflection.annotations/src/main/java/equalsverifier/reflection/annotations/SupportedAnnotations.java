@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-import static nl.jqno.equalsverifier.internal.reflection.Util.classForName;
+import static equalsverifier.reflection.Util.classForName;
 
 /**
  * Descriptions of the annotations that EqualsVerifier supports.

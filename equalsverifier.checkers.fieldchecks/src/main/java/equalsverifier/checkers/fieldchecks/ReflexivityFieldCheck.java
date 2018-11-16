@@ -1,14 +1,14 @@
 package equalsverifier.checkers.fieldchecks;
 
-import nl.jqno.equalsverifier.Warning;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCache;
-import nl.jqno.equalsverifier.internal.reflection.annotations.NonnullAnnotationVerifier;
-import nl.jqno.equalsverifier.internal.util.Configuration;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.service.Warning;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.reflection.FieldAccessor;
+import equalsverifier.reflection.annotations.AnnotationCache;
+import equalsverifier.reflection.annotations.NonnullAnnotationVerifier;
+import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Field;
 import java.util.EnumSet;

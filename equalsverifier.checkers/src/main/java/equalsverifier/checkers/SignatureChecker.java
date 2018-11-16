@@ -1,9 +1,9 @@
 package equalsverifier.checkers;
 
-import nl.jqno.equalsverifier.Warning;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.util.Configuration;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.Warning;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.util.Configuration;
+import equalsverifier.util.Formatter;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
