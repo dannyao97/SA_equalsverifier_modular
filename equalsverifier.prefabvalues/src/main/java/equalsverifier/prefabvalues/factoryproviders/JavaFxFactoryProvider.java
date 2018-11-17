@@ -1,11 +1,11 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
-import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.FactoryCache;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.Tuple;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.prefabvalues.factories.AbstractGenericFactory;
-import equalsverifier.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.reflection.PrefabValueFactory;
 import equalsverifier.reflection.ConditionalInstantiator;
 
 import java.util.LinkedHashSet;

@@ -3,10 +3,12 @@ module equalsverifier {
 	requires equalsverifier.checkers.fieldchecks;
 	requires equalsverifier.exceptions;
 	requires equalsverifier.prefabvalues;
-	requires equalsverifier.prefabvalues.factories;
-	requires equalsverifier.prefabvalues.factoryproviders;
+	requires equalsverifier.reflection;
+//	requires equalsverifier.prefabvalues.factories;
+//	requires equalsverifier.prefabvalues.factoryproviders;
 	requires equalsverifier.utils;
     requires org.objectweb.asm;
 
     requires equalsverifier.service;
+//    requires asm;
 }

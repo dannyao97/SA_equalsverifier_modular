@@ -1,10 +1,4 @@
-package equalsverifier.prefabvalues.factories;
-
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
-import equalsverifier.reflection.ClassAccessor;
-import equalsverifier.reflection.FieldIterable;
+package equalsverifier.reflection;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;

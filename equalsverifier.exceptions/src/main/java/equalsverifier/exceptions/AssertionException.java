@@ -1,12 +1,12 @@
 package equalsverifier.exceptions;
 
-//import equalsverifier.utils.Formatter;
+//import equalsverifier.exceptions.Formatter;
 
 //import java.util.ServiceLoader;
 //import equalsverifier.formatService.formatService;
 
-import equalsverifier.service.Formatter;
 
+import equalsverifier.service.MessagingException;
 
 /**
  * Signals that an EqualsVerfier assertion has failed.

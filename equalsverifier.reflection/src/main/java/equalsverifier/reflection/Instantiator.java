@@ -11,7 +11,7 @@ import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.List;
 
-import static equalsverifier.internal.reflection.Util.*;
+import static equalsverifier.reflection.Util.*;
 
 /**
  * Instantiates objects of a given class.

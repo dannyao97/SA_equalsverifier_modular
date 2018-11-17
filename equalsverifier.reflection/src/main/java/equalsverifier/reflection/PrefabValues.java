@@ -1,9 +1,5 @@
-package equalsverifier.prefabvalues;
+package equalsverifier.reflection;
 
-import equalsverifier.exceptions.RecursionException;
-import equalsverifier.exceptions.ReflectionException;
-import equalsverifier.prefabvalues.factories.FallbackFactory;
-import equalsverifier.prefabvalues.factories.PrefabValueFactory;
 
 import java.util.Arrays;
 import java.util.HashMap;

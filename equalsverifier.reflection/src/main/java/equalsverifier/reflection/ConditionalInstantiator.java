@@ -1,7 +1,7 @@
 package equalsverifier.reflection;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import equalsverifier.exceptions.ReflectionException;
+import equalsverifier.reflection.ReflectionException;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

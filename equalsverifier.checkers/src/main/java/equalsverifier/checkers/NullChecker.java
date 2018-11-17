@@ -1,9 +1,9 @@
 package equalsverifier.checkers;
 
-import equalsverifier.Warning;
+import equalsverifier.checkers.Warning;
 import equalsverifier.checkers.fieldchecks.NullPointerExceptionFieldCheck;
 import equalsverifier.reflection.ClassAccessor;
-import equalsverifier.util.Configuration;
+import equalsverifier.utils.Configuration;
 
 public class NullChecker<T> implements Checker {
     private final Configuration<T> config;

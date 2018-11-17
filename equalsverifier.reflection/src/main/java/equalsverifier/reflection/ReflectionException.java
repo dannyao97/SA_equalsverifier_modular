@@ -1,4 +1,4 @@
-package equalsverifier.exceptions;
+package equalsverifier.reflection;
 
 /**
  * Signals that a reflection call went awry.

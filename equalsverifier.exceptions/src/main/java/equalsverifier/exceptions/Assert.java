@@ -1,8 +1,6 @@
-package equalsverifier.utils;
+package equalsverifier.exceptions;
 
-import equalsverifier.exceptions.AssertionException;
-
-import equalsverifier.service.Formatter;
+//import equalsverifier.service_exception.serviceInterface;
 
 /**
  * Alternative for org.junit.Assert, so we can assert things without having a
@@ -12,8 +10,9 @@ public final class Assert {
     private Assert() {
         // Do not instantiate
     }
+   // ServiceLoader<serviceInterface> loader = ServiceLoader.load(serviceInterface.class);
 
-    /**
+    /*
      * Asserts that two Objects are equal to one another. Does nothing if they
      * are; throws an AssertionException if they're not.
      *

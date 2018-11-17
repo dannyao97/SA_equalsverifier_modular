@@ -1,7 +1,6 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
-import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.reflection.FactoryCache;
 
 import java.awt.*;
 import java.awt.color.ColorSpace;

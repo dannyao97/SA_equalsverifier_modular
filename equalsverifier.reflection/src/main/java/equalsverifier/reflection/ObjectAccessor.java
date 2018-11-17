@@ -1,7 +1,7 @@
 package equalsverifier.reflection;
 
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 
 import java.lang.reflect.Field;
 

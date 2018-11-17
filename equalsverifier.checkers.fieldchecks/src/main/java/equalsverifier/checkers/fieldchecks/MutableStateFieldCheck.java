@@ -1,13 +1,13 @@
 package equalsverifier.checkers.fieldchecks;
 
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.FieldAccessor;
-import equalsverifier.utils.Formatter;
 
 import java.util.function.Predicate;
 
-import static equalsverifier.util.Assert.fail;
+import static equalsverifier.exceptions.Assert.fail;
+import equalsverifier.exceptions.Formatter;
 
 public class MutableStateFieldCheck implements FieldCheck {
     private final PrefabValues prefabValues;

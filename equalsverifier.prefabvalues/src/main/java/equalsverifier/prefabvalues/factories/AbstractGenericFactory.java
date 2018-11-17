@@ -1,9 +1,10 @@
 package equalsverifier.prefabvalues.factories;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import equalsverifier.exceptions.ReflectionException;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValueFactory;
+import equalsverifier.reflection.ReflectionException;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

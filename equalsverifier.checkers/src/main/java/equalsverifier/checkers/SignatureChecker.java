@@ -1,21 +1,21 @@
 package equalsverifier.checkers;
 
-import equalsverifier.Warning;
+import equalsverifier.checkers.Warning;
 import equalsverifier.reflection.ClassAccessor;
-import equalsverifier.util.Configuration;
-import equalsverifier.util.Formatter;
+import equalsverifier.utils.Configuration;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
-
-import static nl.jqno.equalsverifier.internal.util.Assert.fail;
+import equalsverifier.exceptions.Formatter;
+import static equalsverifier.exceptions.Assert.fail;
 
 public class SignatureChecker<T> implements Checker {
     private final Class<T> type;
     private final ClassAccessor<T> classAccessor;
-    private final Set<Warning> warningsToSuppress;
+    private final EnumSet<equalsverifier.service.Warning> warningsToSuppress;
 
     public SignatureChecker(Configuration<T> config) {
         this.type = config.getType();

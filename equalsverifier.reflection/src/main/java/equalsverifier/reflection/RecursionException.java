@@ -1,7 +1,8 @@
-package equalsverifier.exceptions;
+package equalsverifier.reflection;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.TypeTag;
+import equalsverifier.service.MessagingException;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;

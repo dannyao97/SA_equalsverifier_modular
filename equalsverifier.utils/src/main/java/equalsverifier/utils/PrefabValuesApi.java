@@ -2,8 +2,8 @@ package equalsverifier.utils;
 
 import equalsverifier.service.Func.Func1;
 import equalsverifier.service.Func.Func2;
-import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.reflection.FactoryCache;
+import equalsverifier.reflection.PrefabValueFactory;
 import equalsverifier.reflection.ObjectAccessor;
 
 import static equalsverifier.prefabvalues.factories.Factories.simple;

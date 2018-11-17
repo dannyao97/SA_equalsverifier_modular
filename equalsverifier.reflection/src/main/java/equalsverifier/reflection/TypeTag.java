@@ -1,6 +1,6 @@
-package equalsverifier.prefabvalues;
+package equalsverifier.reflection;
 
-import equalsverifier.exceptions.EqualsVerifierBugException;
+import equalsverifier.reflection.EqualsVerifierBugException;
 
 import java.lang.reflect.*;
 import java.util.*;

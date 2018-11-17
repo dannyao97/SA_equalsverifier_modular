@@ -1,21 +1,21 @@
 package equalsverifier.checkers.fieldchecks;
 
 import equalsverifier.service.Warning;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.FieldAccessor;
 import equalsverifier.reflection.annotations.AnnotationCache;
 import equalsverifier.reflection.annotations.NonnullAnnotationVerifier;
 import equalsverifier.utils.Configuration;
-import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Field;
 import java.util.EnumSet;
 import java.util.Set;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.assertEquals;
-import static nl.jqno.equalsverifier.internal.util.Assert.assertFalse;
+import static equalsverifier.exceptions.Assert.assertEquals;
+import static equalsverifier.exceptions.Assert.assertFalse;
+import equalsverifier.exceptions.Formatter;
 
 public class ReflexivityFieldCheck<T> implements FieldCheck {
     private final TypeTag typeTag;

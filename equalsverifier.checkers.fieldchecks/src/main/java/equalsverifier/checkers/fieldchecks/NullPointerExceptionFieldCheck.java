@@ -4,11 +4,10 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import equalsverifier.reflection.FieldAccessor;
 import equalsverifier.reflection.annotations.NonnullAnnotationVerifier;
 import equalsverifier.utils.Configuration;
-import equalsverifier.utils.Formatter;
-
+import equalsverifier.exceptions.Formatter;
 import java.lang.reflect.Field;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.fail;
+import static equalsverifier.exceptions.Assert.fail;
 
 @SuppressFBWarnings(value = "RV_RETURN_VALUE_IGNORED", justification = "We only want to see if it throws an exception.")
 public class NullPointerExceptionFieldCheck<T> implements FieldCheck {

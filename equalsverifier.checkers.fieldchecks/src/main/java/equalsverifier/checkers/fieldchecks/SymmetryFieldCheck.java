@@ -1,11 +1,11 @@
 package equalsverifier.checkers.fieldchecks;
 
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.FieldAccessor;
-import equalsverifier.utils.Formatter;
 
-import static equalsverifier.utils.Assert.assertTrue;
+import static equalsverifier.exceptions.Assert.assertTrue;
+import equalsverifier.exceptions.Formatter;
 
 public class SymmetryFieldCheck implements FieldCheck {
     private final PrefabValues prefabValues;

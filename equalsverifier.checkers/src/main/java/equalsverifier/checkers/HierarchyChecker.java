@@ -1,19 +1,19 @@
 package equalsverifier.checkers;
 
-import equalsverifier.Warning;
-import equalsverifier.exceptions.ReflectionException;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.checkers.Warning;
+import equalsverifier.reflection.ReflectionException;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.ObjectAccessor;
 import equalsverifier.reflection.annotations.SupportedAnnotations;
-import equalsverifier.utils.CachedHashCodeInitializer;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
 import equalsverifier.utils.Configuration;
-import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.*;
+import static equalsverifier.exceptions.Assert.*;
+import equalsverifier.exceptions.Formatter;
 
 public class HierarchyChecker<T> implements Checker {
     private final Configuration<T> config;

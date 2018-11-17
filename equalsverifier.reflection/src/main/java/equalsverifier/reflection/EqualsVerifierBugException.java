@@ -1,4 +1,4 @@
-package equalsverifier.exceptions;
+package equalsverifier.reflection;
 
 /**
  * Signals a bug in EqualsVerifier.

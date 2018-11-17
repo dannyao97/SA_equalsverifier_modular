@@ -1,4 +1,4 @@
-package equalsverifier.exceptions;
+package equalsverifier.service;
 
 /**
  * Superclass for exceptions that exist only to send a message to the user when

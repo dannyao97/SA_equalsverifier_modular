@@ -1,7 +1,6 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
-import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.reflection.FactoryCache;
 
 public interface FactoryProvider {
     public FactoryCache getFactoryCache();

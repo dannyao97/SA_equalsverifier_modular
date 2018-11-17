@@ -4,15 +4,15 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import equalsverifier.exceptions.AssertionException;
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.reflection.ObjectAccessor;
-import equalsverifier.utils.CachedHashCodeInitializer;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
 import equalsverifier.utils.Configuration;
-import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Objects;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.*;
+import equalsverifier.exceptions.Formatter;
+import static equalsverifier.exceptions.Assert.*;
 
 public class ExamplesChecker<T> implements Checker {
     private final Class<T> type;

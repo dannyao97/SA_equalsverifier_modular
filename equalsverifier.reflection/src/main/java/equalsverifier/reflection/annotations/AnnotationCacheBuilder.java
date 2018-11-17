@@ -2,14 +2,20 @@ package equalsverifier.reflection.annotations;
 
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.reflection.SuperclassIterable;
+//import org.ow2.asm;
+
+//import org.ow2.asm;
 import org.objectweb.asm.*;
+
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.*;
 
+
 public class AnnotationCacheBuilder {
+
 
     private static final int OPCODES = Opcodes.ASM7;
 

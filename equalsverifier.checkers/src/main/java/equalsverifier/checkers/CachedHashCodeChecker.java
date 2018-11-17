@@ -1,15 +1,17 @@
 package equalsverifier.checkers;
 
 
-import equalsverifier.utils.CachedHashCodeInitializer;
-import equalsverifier.utils.Formatter;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
 import equalsverifier.utils.Configuration;
-
+import equalsverifier.exceptions.Formatter;
+import static equalsverifier.exceptions.Assert.fail;
+import static equalsverifier.exceptions.Assert.assertFalse;
+import static equalsverifier.exceptions.Assert.assertEquals;
 import java.util.EnumSet;
 
 public class CachedHashCodeChecker<T> implements Checker {
     private final CachedHashCodeInitializer<T> cachedHashCodeInitializer;
-    private final EnumSet<Warning> warningsToSuppress;
+    private final EnumSet<equalsverifier.service.Warning> warningsToSuppress;
 
     public CachedHashCodeChecker(Configuration<T> config) {
         this.cachedHashCodeInitializer = config.getCachedHashCodeInitializer();

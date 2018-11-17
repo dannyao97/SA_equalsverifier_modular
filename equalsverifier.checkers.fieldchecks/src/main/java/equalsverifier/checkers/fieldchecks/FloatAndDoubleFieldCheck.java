@@ -1,9 +1,9 @@
 package equalsverifier.checkers.fieldchecks;
 
 import equalsverifier.reflection.FieldAccessor;
-import equalsverifier.utils.Formatter;
 
-import static equalsverifier.util.Assert.assertEquals;
+import static equalsverifier.exceptions.Assert.assertEquals;
+import equalsverifier.exceptions.Formatter;
 
 public class FloatAndDoubleFieldCheck implements FieldCheck {
     @Override

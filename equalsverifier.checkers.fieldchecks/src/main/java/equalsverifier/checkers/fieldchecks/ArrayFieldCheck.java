@@ -1,12 +1,12 @@
 package equalsverifier.checkers.fieldchecks;
 
 import equalsverifier.reflection.FieldAccessor;
-import equalsverifier.utils.CachedHashCodeInitializer;
-import equalsverifier.utils.Formatter;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
+import equalsverifier.exceptions.Formatter;
 
 import java.lang.reflect.Array;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.assertEquals;
+import static equalsverifier.exceptions.Assert.assertEquals;
 
 public class ArrayFieldCheck<T> implements FieldCheck {
     private CachedHashCodeInitializer<T> cachedHashCodeInitializer;

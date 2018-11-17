@@ -1,18 +1,18 @@
 package equalsverifier.checkers;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.Tuple;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.FieldIterable;
-import equalsverifier.utils.CachedHashCodeInitializer;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
 import equalsverifier.utils.Configuration;
-import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Field;
 
-import static equalsverifier.utils.Assert.fail;
+import static equalsverifier.exceptions.Assert.fail;
+import equalsverifier.exceptions.Formatter;
 
 public class AbstractDelegationChecker<T> implements Checker {
     private final Class<T> type;

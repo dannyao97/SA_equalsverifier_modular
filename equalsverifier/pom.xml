@@ -55,7 +55,19 @@
             <artifactId>asm</artifactId>
             <version>7.0</version>
         </dependency>
-	</dependencies>
+        <dependency>
+            <groupId>equalsverifier</groupId>
+            <artifactId>service_exception</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>equalsverifier</groupId>
+            <artifactId>service_exception</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

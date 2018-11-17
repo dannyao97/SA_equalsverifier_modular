@@ -1,21 +1,22 @@
 package equalsverifier.checkers.fieldchecks;
 
 import equalsverifier.service.Warning;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.FieldAccessor;
 import equalsverifier.reflection.annotations.AnnotationCache;
 import equalsverifier.reflection.annotations.SupportedAnnotations;
-import equalsverifier.utils.CachedHashCodeInitializer;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
 import equalsverifier.utils.Configuration;
-import equalsverifier.utils.Formatter;
+import equalsverifier.exceptions.Formatter;
+
 
 import java.util.EnumSet;
 import java.util.Set;
 import java.util.function.Predicate;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.assertFalse;
-import static nl.jqno.equalsverifier.internal.util.Assert.assertTrue;
+import static equalsverifier.exceptions.Assert.assertFalse;
+import static equalsverifier.exceptions.Assert.assertTrue;
 
 public class SignificantFieldCheck<T> implements FieldCheck {
     private final Class<?> type;

@@ -1,8 +1,8 @@
 package equalsverifier.reflection;
 
-import equalsverifier.exceptions.ReflectionException;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.ReflectionException;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.annotations.AnnotationCache;
 import equalsverifier.reflection.annotations.NonnullAnnotationVerifier;
 

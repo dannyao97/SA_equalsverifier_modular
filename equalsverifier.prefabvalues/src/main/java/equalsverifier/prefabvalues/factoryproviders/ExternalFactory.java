@@ -1,11 +1,7 @@
-package equalsverifier.prefabvalues.factories;
+package equalsverifier.prefabvalues.factoryproviders;
 
-import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.*;
 import equalsverifier.prefabvalues.factoryproviders.FactoryProvider;
-import equalsverifier.reflection.ConditionalInstantiator;
 
 import java.util.LinkedHashSet;
 
@@ -28,7 +24,7 @@ public class ExternalFactory<T> implements PrefabValueFactory<T> {
             ConditionalInstantiator ci = new ConditionalInstantiator(factoryName);
             FactoryProvider provider = ci.instantiate(classes(), objects());
             factoryCache = provider.getFactoryCache();
-            //**'getFactoryCache' return 'equalsverifier.prefabvalues.FactoryCache'
+            //**'getFactoryCache' return 'equalsverifier.reflection.FactoryCache'
         }
 
         PrefabValueFactory<T> factory = factoryCache.get(tag.getType());

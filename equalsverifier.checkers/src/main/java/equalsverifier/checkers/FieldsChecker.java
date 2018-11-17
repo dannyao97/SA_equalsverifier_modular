@@ -1,9 +1,9 @@
 package equalsverifier.checkers;
 
-import equalsverifier.Warning;
+import equalsverifier.checkers.Warning;
 import equalsverifier.checkers.fieldchecks.*;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.FieldAccessor;
 import equalsverifier.reflection.annotations.AnnotationCache;

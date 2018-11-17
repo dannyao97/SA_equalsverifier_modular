@@ -2,7 +2,7 @@ package equalsverifier;
 
 import equalsverifier.service.Func.Func1;
 import equalsverifier.service.Func.Func2;
-import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.reflection.FactoryCache;
 import equalsverifier.utils.PrefabValuesApi;
 
 import java.util.Collections;

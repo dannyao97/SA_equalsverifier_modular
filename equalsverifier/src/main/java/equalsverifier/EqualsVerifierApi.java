@@ -1,11 +1,14 @@
 package equalsverifier;
 
-import equalsverifier.Func.Func1;
-import equalsverifier.Func.Func2;
+import equalsverifier.service.Func.Func1;
+import equalsverifier.service.Func.Func2;
 import equalsverifier.checkers.*;
-import equalsverifier.exceptions.MessagingException;
-import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.service.MessagingException;
+import equalsverifier.service.Warning;
+import equalsverifier.reflection.FactoryCache;
 import equalsverifier.utils.*;
+import equalsverifier.exceptions.Formatter;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
 import org.objectweb.asm.Type;
 
 import java.util.*;
@@ -19,7 +22,7 @@ public class EqualsVerifierApi<T> {
     private final Class<T> type;
     private final Set<String> actualFields;
 
-    private EnumSet<Warning> warningsToSuppress = EnumSet.noneOf(Warning.class);
+    private EnumSet<equalsverifier.service.Warning> warningsToSuppress = EnumSet.noneOf(Warning.class);
     private boolean usingGetClass = false;
     private boolean hasRedefinedSuperclass = false;
     private Class<? extends T> redefinedSubclass = null;

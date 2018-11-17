@@ -2,7 +2,8 @@ package equalsverifier.prefabvalues;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import equalsverifier.prefabvalues.factories.*;
-import equalsverifier.reflection.ConditionalInstantiator;
+import equalsverifier.prefabvalues.factoryproviders.ExternalFactory;
+import equalsverifier.reflection.*;
 
 import java.io.File;
 import java.math.BigDecimal;

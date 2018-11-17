@@ -1,9 +1,9 @@
 package equalsverifier.prefabvalues.factories;
 
 import equalsverifier.service.Func;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.Tuple;
+import equalsverifier.reflection.TypeTag;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;

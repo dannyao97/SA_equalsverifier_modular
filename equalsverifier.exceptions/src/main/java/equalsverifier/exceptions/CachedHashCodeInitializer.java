@@ -1,6 +1,6 @@
-package equalsverifier.utils;
+package equalsverifier.exceptions;
 
-import equalsverifier.exceptions.ReflectionException;
+import equalsverifier.reflection.ReflectionException;
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.reflection.SuperclassIterable;
 

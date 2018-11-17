@@ -1,5 +1,6 @@
 package equalsverifier.prefabvalues.factories;
 
+import equalsverifier.reflection.PrefabValueFactory;
 import equalsverifier.service.Func.Func1;
 import equalsverifier.service.Func.Func2;
 

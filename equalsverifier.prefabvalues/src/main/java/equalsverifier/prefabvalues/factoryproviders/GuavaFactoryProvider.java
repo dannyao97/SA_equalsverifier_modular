@@ -1,12 +1,11 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
-import com.google.common.collect;
+import com.google.common.collect.*;
 
-import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.FactoryCache;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.Tuple;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.prefabvalues.factories.AbstractGenericFactory;
 import equalsverifier.prefabvalues.factories.EnumMapFactory;
 import equalsverifier.prefabvalues.factories.EnumSetFactory;

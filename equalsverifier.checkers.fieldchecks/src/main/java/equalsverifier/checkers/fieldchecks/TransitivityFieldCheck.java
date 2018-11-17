@@ -1,15 +1,15 @@
 package equalsverifier.checkers.fieldchecks;
 
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.FieldAccessor;
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.reflection.ObjectAccessor;
-import equalsverifier.utils.Formatter;
 
 import java.lang.reflect.Field;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.fail;
+import static equalsverifier.exceptions.Assert.fail;
+import equalsverifier.exceptions.Formatter;
 
 public class TransitivityFieldCheck implements FieldCheck {
     private final PrefabValues prefabValues;

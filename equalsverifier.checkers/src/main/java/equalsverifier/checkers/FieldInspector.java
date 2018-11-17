@@ -1,7 +1,7 @@
 package equalsverifier.checkers;
 
 import equalsverifier.checkers.fieldchecks.FieldCheck;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.reflection.ObjectAccessor;

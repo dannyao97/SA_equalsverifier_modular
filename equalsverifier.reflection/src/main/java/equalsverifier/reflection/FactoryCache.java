@@ -1,6 +1,4 @@
-package equalsverifier.prefabvalues;
-
-import equalsverifier.prefabvalues.factories.PrefabValueFactory;
+package equalsverifier.reflection;
 
 import java.util.HashMap;
 import java.util.Iterator;

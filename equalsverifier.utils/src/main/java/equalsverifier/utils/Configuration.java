@@ -1,14 +1,15 @@
 package equalsverifier.utils;
 
 import equalsverifier.service.Warning;
-import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.reflection.FactoryCache;
 import equalsverifier.prefabvalues.JavaApiPrefabValues;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.annotations.AnnotationCache;
 import equalsverifier.reflection.annotations.AnnotationCacheBuilder;
 import equalsverifier.reflection.annotations.SupportedAnnotations;
+import equalsverifier.exceptions.CachedHashCodeInitializer;
 
 import java.util.*;
 

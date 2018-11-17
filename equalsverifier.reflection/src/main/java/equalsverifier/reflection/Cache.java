@@ -1,4 +1,4 @@
-package equalsverifier.prefabvalues;
+package equalsverifier.reflection;
 
 import java.util.HashMap;
 import java.util.Map;

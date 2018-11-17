@@ -1,14 +1,14 @@
 package equalsverifier.checkers.fieldchecks;
 
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.reflection.PrefabValues;
+import equalsverifier.reflection.TypeTag;
 import equalsverifier.reflection.FieldAccessor;
 import equalsverifier.reflection.annotations.AnnotationCache;
 import equalsverifier.reflection.annotations.SupportedAnnotations;
 import equalsverifier.utils.Configuration;
-import equalsverifier.utils.Formatter;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.fail;
+import static equalsverifier.exceptions.Assert.fail;
+import equalsverifier.exceptions.Formatter;
 
 public class TransientFieldsCheck<T> implements FieldCheck {
     private final PrefabValues prefabValues;
