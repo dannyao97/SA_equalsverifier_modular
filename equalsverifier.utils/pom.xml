@@ -15,13 +15,7 @@
         </dependency>
         <dependency>
             <groupId>equalsverifier</groupId>
-            <artifactId>service_exception</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>equalsverifier</groupId>
-            <artifactId>exceptions</artifactId>
+            <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
@@ -37,24 +31,8 @@
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>equalsverifier</groupId>
-            <artifactId>service_exception</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>equalsverifier</groupId>
-            <artifactId>service_exception</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>equalsverifier</groupId>
-            <artifactId>service_exception</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+
+
 
     </dependencies>
 

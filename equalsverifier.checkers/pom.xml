@@ -22,11 +22,7 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>equalsverifier</groupId>
-			<artifactId>checkers</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
+
 		<dependency>
 			<groupId>com.github.spotbugs</groupId>
 			<artifactId>spotbugs-annotations</artifactId>
@@ -39,6 +35,11 @@
 			<version>1.0</version>
 			<scope>provided</scope>
 		</dependency>
+        <dependency>
+            <groupId>equalsverifier</groupId>
+            <artifactId>exceptions</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 		<dependency>
 			<groupId>equalsverifier</groupId>
 			<artifactId>prefabvalues</artifactId>
@@ -59,13 +60,7 @@
 		</dependency>
         <dependency>
             <groupId>equalsverifier</groupId>
-            <artifactId>service_exception</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>equalsverifier</groupId>
-            <artifactId>service_exception</artifactId>
+            <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

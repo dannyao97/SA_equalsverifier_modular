@@ -59,7 +59,7 @@ public abstract class AbstractGenericFactory<T> implements PrefabValueFactory<T>
     }
 
     @SuppressFBWarnings(value = "DP_DO_INSIDE_DO_PRIVILEGED", justification = "EV is run only from within unit tests")
-    protected void invoke(Class<?> type, Object receiver, String methodName, Class<?>[] classes, Object[] values) {
+    public void invoke(Class<?> type, Object receiver, String methodName, Class<?>[] classes, Object[] values) {
         try {
             Method method = type.getMethod(methodName, classes);
             // Not necessary in the common case, but required for https://bugs.java.com/view_bug.do?bug_id=6924232.

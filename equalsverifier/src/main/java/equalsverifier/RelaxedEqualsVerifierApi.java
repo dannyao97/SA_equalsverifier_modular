@@ -4,6 +4,7 @@ import java.util.List;
 
 import static equalsverifier.utils.ListBuilders.buildListOfAtLeastOne;
 import static equalsverifier.utils.ListBuilders.listContainsDuplicates;
+import equalsverifier.service.Warning;
 
 /**
  * API class for

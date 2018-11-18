@@ -52,11 +52,11 @@ public final class JavaFxFactoryProvider implements FactoryProvider {
         return new PropertyFactory<>(JAVAFX_PROPERTY_PACKAGE + typeName, parameterRawType);
     }
 
-    static final class PropertyFactory<T> extends AbstractGenericFactory<T> {
+    public static final class PropertyFactory<T> extends AbstractGenericFactory<T> {
         private final String fullyQualifiedTypeName;
         private final Class<?> parameterRawType;
 
-        PropertyFactory(String fullyQualifiedTypeName, Class<?> parameterRawType) {
+        public PropertyFactory(String fullyQualifiedTypeName, Class<?> parameterRawType) {
             this.fullyQualifiedTypeName = fullyQualifiedTypeName;
             this.parameterRawType = parameterRawType;
         }

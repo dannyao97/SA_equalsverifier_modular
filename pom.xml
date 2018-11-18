@@ -7,7 +7,50 @@
 	<groupId>equalsverifier</groupId>
 	<artifactId>parent</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>equalsverifier</groupId>
+            <artifactId>main</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>nl.jqno.equalsverifier</groupId>
+            <artifactId>equalsverifier-signedjar-test</artifactId>
+            <version>0.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.maven-play-plugin.org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
+            <version>3.10.0.v20140604-1726</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <version>1.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>nl.jqno.equalsverifier</groupId>
+            <artifactId>equalsverifier-signedjar-test</artifactId>
+            <version>0.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <packaging>pom</packaging>
 
 	<properties>
 		<java>java</java>
@@ -23,10 +66,8 @@
 		<module>equalsverifier.checkers.fieldchecks</module>
 		<module>equalsverifier.exceptions</module>
 		<module>equalsverifier.prefabvalues</module>
-		<module>equalsverifier.prefabvalues.factories</module>
-		<module>equalsverifier.prefabvalues.factoryproviders</module>
 		<module>equalsverifier.reflection</module>
-		<module>equalsverifier.reflection.annotations</module>
+        <module>equalsverifier.service</module>
 		<module>equalsverifier.utils</module>
 	</modules>
 
@@ -37,7 +78,61 @@
 				<artifactId>spark-core</artifactId>
 				<version>2.7.1</version>
 			</dependency>
-		</dependencies>
+
+
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>equalsverifier</groupId>
+            <artifactId>equalsverifier-signedjar-test</artifactId>
+            <version>0.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.annotation</artifactId>
+            <version>2.2.100</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ArchUnit dependencies -->
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit-junit4</artifactId>
+            <version>0.9.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+            <scope>test</scope>
+        </dependency>
+        </dependencies>
 	</dependencyManagement>
 
 	<build>
@@ -73,7 +168,7 @@
 					<arguments>
 						<argument>--module-path=mods-mvn</argument>
 						<argument>--class-path=libs/*</argument>
-						<argument>--module=equalsverifier/equalsverifier.Main</argument>
+						<argument>--module=equalsverifier/equalsverifier.main</argument>
 					</arguments>
 				</configuration>
 			</plugin>

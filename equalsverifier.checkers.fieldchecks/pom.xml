@@ -27,19 +27,20 @@
             <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
-
-        </dependency><dependency>
-        <groupId>equalsverifier</groupId>
-        <artifactId>service_exception</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <scope>compile</scope>
-    </dependency>
+        </dependency>
         <dependency>
             <groupId>equalsverifier</groupId>
-            <artifactId>service_exception</artifactId>
+            <artifactId>checkers.fieldchecks</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>equalsverifier</groupId>
+            <artifactId>exceptions</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-annotations</artifactId>

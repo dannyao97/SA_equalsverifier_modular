@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Contains a cache of prefabricated values, for {@link PrefabValues}.
  */
-class Cache {
+public class Cache {
     @SuppressWarnings("rawtypes")
     private final Map<TypeTag, Tuple> cache = new HashMap<>();
 

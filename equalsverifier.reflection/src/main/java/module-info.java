@@ -6,7 +6,7 @@ module equalsverifier.reflection {
     requires equalsverifier.service;
    // requires equalsverifier.prefabvalues;
     requires net.bytebuddy;
-    requires asm;
+    //requires asm;
     requires org.objectweb.asm;
     requires org.objenesis;
 
