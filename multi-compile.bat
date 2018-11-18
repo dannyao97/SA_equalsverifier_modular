@@ -16,9 +16,9 @@ javac --module-path mods --module-source-path "./*/src/main/java" -d classes --m
 
 echo " > packaging modules"
 jar --create --file mods/equalsverifier.checkers.jar -C classes/equalsverifier.checkers .
-jar --create --file mods/equalsverifier.checkers.fieldchecks.jar -C classes/equalsverifier.checkers.fieldchecks .
-jar --create --file mods/equalsverifier.checkers.beta.jar -C classes/equalsverifier.checkers.beta .
-jar --create --file mods/equalsverifier.statistics.jar -C classes/equalsverifier.statistics .
+jar --create --file mods/equalsverifier.checkers.beta.jar -C classes/equalsverifier.gentype .
+jar --create --file mods/equalsverifier.statistics.jar -C classes/equalsverifier.prefabservice .
 jar --create --file mods/equalsverifier.prefabvalues.jar -C classes/equalsverifier.prefabvalues .
-jar --create --file mods/equalsverifier.rest.jar -C classes/equalsverifier.rest .
-jar --create --file mods/equalsverifier.jar --main-class equalsverifier.Main -C classes/equalsverifier .
+jar --create --file mods/equalsverifier.prefabvalues.jar -C classes/equalsverifier.reflection .
+jar --create --file mods/equalsverifier.rest.jar -C classes/equalsverifier.utils .
+jar --create --file mods/equalsverifier.jar --main-class equalsverifier.equalsverifier -C classes/equalsverifier .
