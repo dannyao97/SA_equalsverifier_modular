@@ -1,5 +1,7 @@
 package equalsverifier.prefabvalues;
 
+import equalsverifier.gentype.TypeTag;
+
 import java.util.HashMap;
 import java.util.Map;
 

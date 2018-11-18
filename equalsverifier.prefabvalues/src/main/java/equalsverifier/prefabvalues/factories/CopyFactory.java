@@ -1,8 +1,8 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.Tuple;
 
 import java.util.LinkedHashSet;
 import java.util.function.Function;
@@ -17,14 +17,14 @@ public class CopyFactory<T, S> extends AbstractGenericFactory<T> {
     }
 
     @Override
-    public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+    public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
         LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
         TypeTag sourceTag = copyGenericTypesInto(source, tag);
-        prefabValues.realizeCacheFor(sourceTag, clone);
+        prefabAbstract.realizeCacheFor(sourceTag, clone);
 
-        S redSource = prefabValues.giveRed(sourceTag);
-        S blackSource = prefabValues.giveBlack(sourceTag);
-        S redCopySource = prefabValues.giveRedCopy(sourceTag);
+        S redSource = prefabAbstract.giveRed(sourceTag);
+        S blackSource = prefabAbstract.giveBlack(sourceTag);
+        S redCopySource = prefabAbstract.giveRedCopy(sourceTag);
 
         return Tuple.of(copy.apply(redSource), copy.apply(blackSource), copy.apply(redCopySource));
     }

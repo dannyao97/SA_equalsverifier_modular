@@ -1,9 +1,9 @@
 package equalsverifier.checkers;
 
-import nl.jqno.equalsverifier.Warning;
-import nl.jqno.equalsverifier.internal.checkers.fieldchecks.NullPointerExceptionFieldCheck;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.util.Configuration;
+import equalsverifier.checkers.fieldchecks.NullPointerExceptionFieldCheck;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Warning;
 
 public class NullChecker<T> implements Checker {
     private final Configuration<T> config;

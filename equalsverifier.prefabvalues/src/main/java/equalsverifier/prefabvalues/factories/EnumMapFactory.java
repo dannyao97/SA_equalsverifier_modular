@@ -1,8 +1,8 @@
 package equalsverifier.prefabvalues.factories;
 
-import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
 import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -18,17 +18,17 @@ public final class EnumMapFactory<T> extends AbstractGenericFactory<T> {
     }
 
     @Override
-    public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+    public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
         LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
-        TypeTag keyTag = determineAndCacheActualTypeTag(0, tag, prefabValues, clone, Enum.class);
-        TypeTag valueTag = determineAndCacheActualTypeTag(1, tag, prefabValues, clone, Enum.class);
+        TypeTag keyTag = determineAndCacheActualTypeTag(0, tag, prefabAbstract, clone, Enum.class);
+        TypeTag valueTag = determineAndCacheActualTypeTag(1, tag, prefabAbstract, clone, Enum.class);
 
         Map red = new HashMap<>();
         Map black = new HashMap<>();
         Map redCopy = new HashMap<>();
-        red.put(prefabValues.giveRed(keyTag), prefabValues.giveBlack(valueTag));
-        black.put(prefabValues.giveBlack(keyTag), prefabValues.giveBlack(valueTag));
-        redCopy.put(prefabValues.giveRed(keyTag), prefabValues.giveBlack(valueTag));
+        red.put(prefabAbstract.giveRed(keyTag), prefabAbstract.giveBlack(valueTag));
+        black.put(prefabAbstract.giveBlack(keyTag), prefabAbstract.giveBlack(valueTag));
+        redCopy.put(prefabAbstract.giveRed(keyTag), prefabAbstract.giveBlack(valueTag));
 
         return Tuple.of(factory.apply(red), factory.apply(black), factory.apply(redCopy));
     }

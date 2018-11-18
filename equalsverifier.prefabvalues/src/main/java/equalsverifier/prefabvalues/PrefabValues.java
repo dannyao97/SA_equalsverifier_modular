@@ -1,9 +1,10 @@
 package equalsverifier.prefabvalues;
 
-import nl.jqno.equalsverifier.internal.exceptions.RecursionException;
-import nl.jqno.equalsverifier.internal.exceptions.ReflectionException;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.FallbackFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.factories.FallbackFactory;
+import equalsverifier.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.reflection.ReflectionException;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,7 +18,7 @@ import java.util.Map;
  * generics into account; i.e., {@code List<Integer>} is different from
  * {@code List<String>}.
  */
-public class PrefabValues {
+public class PrefabValues extends PrefabAbstract {
     private static final Map<Class<?>, Class<?>> PRIMITIVE_OBJECT_MAPPER = createPrimitiveObjectMapper();
 
     private final Cache cache = new Cache();
@@ -34,6 +35,12 @@ public class PrefabValues {
     }
 
     /**
+     * Default Constructor for Java 9
+     */
+    public PrefabValues(){
+        this.factoryCache = null;
+    }
+    /**
      * Returns the "red" prefabricated value of the specified type.
      *
      * It's always a different value from the "black" one.
@@ -43,6 +50,7 @@ public class PrefabValues {
      *            parameters.
      * @return The "red" prefabricated value.
      */
+    @Override
     public <T> T giveRed(TypeTag tag) {
         return this.<T>giveTuple(tag).getRed();
     }
@@ -57,6 +65,7 @@ public class PrefabValues {
      *            parameters.
      * @return The "black" prefabricated value.
      */
+    @Override
     public <T> T giveBlack(TypeTag tag) {
         return this.<T>giveTuple(tag).getBlack();
     }
@@ -72,6 +81,7 @@ public class PrefabValues {
      *            parameters.
      * @return A shallow copy of the "red" prefabricated value.
      */
+    @Override
     public <T> T giveRedCopy(TypeTag tag) {
         return this.<T>giveTuple(tag).getRedCopy();
     }
@@ -85,6 +95,7 @@ public class PrefabValues {
      *            parameters.
      * @return A tuple of two different values of the given type.
      */
+
     public <T> Tuple<T> giveTuple(TypeTag tag) {
         realizeCacheFor(tag, emptyStack());
         return cache.getTuple(tag);
@@ -101,6 +112,7 @@ public class PrefabValues {
      *              returned.
      * @return A value that is different from {@code value}.
      */
+    @Override
     public <T> T giveOther(TypeTag tag, T value) {
         Class<T> type = tag.getType();
         if (value != null && !type.isAssignableFrom(value.getClass()) && !wraps(type, value.getClass())) {
@@ -142,6 +154,7 @@ public class PrefabValues {
      *            parameters.
      * @param typeStack Keeps track of recursion in the type.
      */
+    @Override
     public <T> void realizeCacheFor(TypeTag tag, LinkedHashSet<TypeTag> typeStack) {
         if (!cache.contains(tag)) {
             Tuple<T> tuple = createTuple(tag, typeStack);

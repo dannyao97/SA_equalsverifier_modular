@@ -20,13 +20,10 @@
 	<modules>
 		<module>equalsverifier</module>
 		<module>equalsverifier.checkers</module>
-		<module>equalsverifier.checkers.fieldchecks</module>
-		<module>equalsverifier.exceptions</module>
+		<module>equalsverifier.gentype</module>
 		<module>equalsverifier.prefabvalues</module>
-		<module>equalsverifier.prefabvalues.factories</module>
-		<module>equalsverifier.prefabvalues.factoryproviders</module>
+		<module>equalsverifier.prefabservice</module>
 		<module>equalsverifier.reflection</module>
-		<module>equalsverifier.reflection.annotations</module>
 		<module>equalsverifier.utils</module>
 	</modules>
 

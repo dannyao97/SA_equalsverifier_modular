@@ -1,18 +1,18 @@
 package equalsverifier.checkers;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import nl.jqno.equalsverifier.internal.exceptions.AssertionException;
-import nl.jqno.equalsverifier.internal.reflection.FieldIterable;
-import nl.jqno.equalsverifier.internal.reflection.ObjectAccessor;
-import nl.jqno.equalsverifier.internal.util.CachedHashCodeInitializer;
-import nl.jqno.equalsverifier.internal.util.Configuration;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.reflection.FieldIterable;
+import equalsverifier.reflection.ObjectAccessor;
+import equalsverifier.utils.CachedHashCodeInitializer;
+import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Formatter;
+import equalsverifier.utils.exceptions.AssertionException;
 
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Objects;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.*;
+import static equalsverifier.utils.Assert.*;
 
 public class ExamplesChecker<T> implements Checker {
     private final Class<T> type;

@@ -1,19 +1,19 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.prefabvalues.factoryproviders.FactoryProvider;
-import nl.jqno.equalsverifier.internal.reflection.ConditionalInstantiator;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabvalues.factoryproviders.FactoryProvider;
+import equalsverifier.reflection.ConditionalInstantiator;
 
 import java.util.LinkedHashSet;
 
-import static nl.jqno.equalsverifier.internal.reflection.Util.classes;
-import static nl.jqno.equalsverifier.internal.reflection.Util.objects;
+import static equalsverifier.reflection.Util.classes;
+import static equalsverifier.reflection.Util.objects;
 
 public class ExternalFactory<T> implements PrefabValueFactory<T> {
-    private static final String EXTERNAL_FACTORIES_PACKAGE = "nl.jqno.equalsverifier.internal.prefabvalues.factoryproviders.";
+    private static final String EXTERNAL_FACTORIES_PACKAGE = "equalsverifier.prefabvalues.factoryproviders.";
 
     private final String factoryName;
     private FactoryCache factoryCache;
@@ -23,7 +23,7 @@ public class ExternalFactory<T> implements PrefabValueFactory<T> {
     }
 
     @Override
-    public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+    public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
         if (factoryCache == null) {
             ConditionalInstantiator ci = new ConditionalInstantiator(factoryName);
             FactoryProvider provider = ci.instantiate(classes(), objects());
@@ -31,6 +31,6 @@ public class ExternalFactory<T> implements PrefabValueFactory<T> {
         }
 
         PrefabValueFactory<T> factory = factoryCache.get(tag.getType());
-        return factory.createValues(tag, prefabValues, typeStack);
+        return factory.createValues(tag, prefabAbstract, typeStack);
     }
 }

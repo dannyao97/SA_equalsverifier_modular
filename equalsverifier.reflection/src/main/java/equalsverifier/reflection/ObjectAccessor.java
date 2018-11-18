@@ -1,7 +1,7 @@
 package equalsverifier.reflection;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
 
 import java.lang.reflect.Field;
 
@@ -132,15 +132,15 @@ public final class ObjectAccessor<T> {
      *      field declaration.
      * These fields will be left unmodified.
      *
-     * @param prefabValues Prefabricated values to take values from.
+     * @param prefabAbstract Prefabricated values to take values from.
      * @param enclosingType Describes the type that contains this object as a
      *                      field, to determine any generic parameters it may
      *                      contain.
      */
-    public void scramble(PrefabValues prefabValues, TypeTag enclosingType) {
+    public void scramble(PrefabAbstract prefabAbstract, TypeTag enclosingType) {
         for (Field field : FieldIterable.of(type)) {
             FieldAccessor accessor = new FieldAccessor(object, field);
-            accessor.changeField(prefabValues, enclosingType);
+            accessor.changeField(prefabAbstract, enclosingType);
         }
     }
 
@@ -157,15 +157,15 @@ public final class ObjectAccessor<T> {
      *      field declaration.
      * These fields will be left unmodified.
      *
-     * @param prefabValues Prefabricated values to take values from.
+     * @param prefabAbstract Prefabricated values to take values from.
      * @param enclosingType Describes the type that contains this object as a
      *                      field, to determine any generic parameters it may
      *                      contain.
      */
-    public void shallowScramble(PrefabValues prefabValues, TypeTag enclosingType) {
+    public void shallowScramble(PrefabAbstract prefabAbstract, TypeTag enclosingType) {
         for (Field field : FieldIterable.ofIgnoringSuper(type)) {
             FieldAccessor accessor = new FieldAccessor(object, field);
-            accessor.changeField(prefabValues, enclosingType);
+            accessor.changeField(prefabAbstract, enclosingType);
         }
     }
 }

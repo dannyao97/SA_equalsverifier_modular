@@ -1,8 +1,8 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.Tuple;
 
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -21,24 +21,24 @@ public class MapFactory<T extends Map> extends AbstractGenericFactory<T> {
     }
 
     @Override
-    public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+    public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
         LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
-        TypeTag keyTag = determineAndCacheActualTypeTag(0, tag, prefabValues, clone);
-        TypeTag valueTag = determineAndCacheActualTypeTag(1, tag, prefabValues, clone);
+        TypeTag keyTag = determineAndCacheActualTypeTag(0, tag, prefabAbstract, clone);
+        TypeTag valueTag = determineAndCacheActualTypeTag(1, tag, prefabAbstract, clone);
 
         // Use red for key and black for value in the Red map to avoid having identical keys and values.
         // But don't do it in the Black map, or they may cancel each other out again.
 
-        Object redKey = prefabValues.giveRed(keyTag);
-        Object blackKey = prefabValues.giveBlack(keyTag);
-        Object blackValue = prefabValues.giveBlack(valueTag);
+        Object redKey = prefabAbstract.giveRed(keyTag);
+        Object blackKey = prefabAbstract.giveBlack(keyTag);
+        Object blackValue = prefabAbstract.giveBlack(valueTag);
 
         T red = createEmpty.get();
         red.put(redKey, blackValue);
 
         T black = createEmpty.get();
         if (!redKey.equals(blackKey)) { // This happens with single-element enums
-            black.put(prefabValues.giveBlack(keyTag), blackValue);
+            black.put(prefabAbstract.giveBlack(keyTag), blackValue);
         }
 
         T redCopy = createEmpty.get();

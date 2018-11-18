@@ -1,8 +1,8 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.Tuple;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -22,16 +22,16 @@ public class EnumSetFactory<T> extends AbstractGenericFactory<T> {
     }
 
     @Override
-    public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+    public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
         LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
-        TypeTag entryTag = determineAndCacheActualTypeTag(0, tag, prefabValues, clone, Enum.class);
+        TypeTag entryTag = determineAndCacheActualTypeTag(0, tag, prefabAbstract, clone, Enum.class);
 
         Collection red = new HashSet<>();
         Collection black = new HashSet<>();
         Collection redCopy = new HashSet<>();
-        red.add(prefabValues.giveRed(entryTag));
-        black.add(prefabValues.giveBlack(entryTag));
-        redCopy.add(prefabValues.giveRed(entryTag));
+        red.add(prefabAbstract.giveRed(entryTag));
+        black.add(prefabAbstract.giveBlack(entryTag));
+        redCopy.add(prefabAbstract.giveRed(entryTag));
 
         return new Tuple<>(factory.apply(red), factory.apply(black), factory.apply(redCopy));
     }

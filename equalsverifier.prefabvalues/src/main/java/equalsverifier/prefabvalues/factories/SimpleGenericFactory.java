@@ -1,9 +1,9 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.Func;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
+import equalsverifier.gentype.Func;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.Tuple;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -21,7 +21,7 @@ public class SimpleGenericFactory<T> extends AbstractGenericFactory<T> {
     }
 
     @Override
-    public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+    public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
         LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
 
         List<Object> redValues = new ArrayList<>();
@@ -30,10 +30,10 @@ public class SimpleGenericFactory<T> extends AbstractGenericFactory<T> {
         boolean useEmpty = false;
         int n = tag.getType().getTypeParameters().length;
         for (int i = 0; i < n; i++) {
-            TypeTag paramTag = determineAndCacheActualTypeTag(i, tag, prefabValues, clone);
+            TypeTag paramTag = determineAndCacheActualTypeTag(i, tag, prefabAbstract, clone);
 
-            Object redValue = prefabValues.giveRed(paramTag);
-            Object blackValue = prefabValues.giveBlack(paramTag);
+            Object redValue = prefabAbstract.giveRed(paramTag);
+            Object blackValue = prefabAbstract.giveBlack(paramTag);
             if (redValue.equals(blackValue)) { // This happens with single-element enums
                 useEmpty = true;
             }

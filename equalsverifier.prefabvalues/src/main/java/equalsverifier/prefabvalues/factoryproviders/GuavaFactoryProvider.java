@@ -1,19 +1,19 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
 import com.google.common.collect.*;
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.AbstractGenericFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.EnumMapFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.EnumSetFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabvalues.factories.AbstractGenericFactory;
+import equalsverifier.prefabvalues.factories.EnumMapFactory;
+import equalsverifier.prefabvalues.factories.EnumSetFactory;
+import equalsverifier.prefabvalues.factories.Factories;
 
 import java.util.*;
 import java.util.function.Supplier;
 
-import static nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories.*;
+import static equalsverifier.prefabvalues.factories.Factories.*;
 
 public final class GuavaFactoryProvider implements FactoryProvider {
     private static final Comparator<Object> OBJECT_COMPARATOR = Comparator.comparingInt(Object::hashCode);
@@ -120,17 +120,17 @@ public final class GuavaFactoryProvider implements FactoryProvider {
         }
 
         @Override
-        public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+        public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
             LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
-            TypeTag keyTag = determineAndCacheActualTypeTag(0, tag, prefabValues, clone);
-            TypeTag valueTag = determineAndCacheActualTypeTag(1, tag, prefabValues, clone);
+            TypeTag keyTag = determineAndCacheActualTypeTag(0, tag, prefabAbstract, clone);
+            TypeTag valueTag = determineAndCacheActualTypeTag(1, tag, prefabAbstract, clone);
 
             T red = factory.get();
             T black = factory.get();
             T redCopy = factory.get();
-            red.put(prefabValues.giveRed(keyTag), prefabValues.giveBlack(valueTag));
-            black.put(prefabValues.giveBlack(keyTag), prefabValues.giveBlack(valueTag));
-            redCopy.put(prefabValues.giveRed(keyTag), prefabValues.giveBlack(valueTag));
+            red.put(prefabAbstract.giveRed(keyTag), prefabAbstract.giveBlack(valueTag));
+            black.put(prefabAbstract.giveBlack(keyTag), prefabAbstract.giveBlack(valueTag));
+            redCopy.put(prefabAbstract.giveRed(keyTag), prefabAbstract.giveBlack(valueTag));
 
             return Tuple.of(red, black, redCopy);
 
@@ -145,18 +145,18 @@ public final class GuavaFactoryProvider implements FactoryProvider {
         }
 
         @Override
-        public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+        public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
             LinkedHashSet<TypeTag> clone = cloneWith(typeStack, tag);
-            TypeTag columnTag = determineAndCacheActualTypeTag(0, tag, prefabValues, clone);
-            TypeTag rowTag = determineAndCacheActualTypeTag(1, tag, prefabValues, clone);
-            TypeTag valueTag = determineAndCacheActualTypeTag(2, tag, prefabValues, clone);
+            TypeTag columnTag = determineAndCacheActualTypeTag(0, tag, prefabAbstract, clone);
+            TypeTag rowTag = determineAndCacheActualTypeTag(1, tag, prefabAbstract, clone);
+            TypeTag valueTag = determineAndCacheActualTypeTag(2, tag, prefabAbstract, clone);
 
             T red = factory.get();
             T black = factory.get();
             T redCopy = factory.get();
-            red.put(prefabValues.giveRed(columnTag), prefabValues.giveRed(rowTag), prefabValues.giveBlack(valueTag));
-            black.put(prefabValues.giveBlack(columnTag), prefabValues.giveBlack(rowTag), prefabValues.giveBlack(valueTag));
-            redCopy.put(prefabValues.giveRed(columnTag), prefabValues.giveRed(rowTag), prefabValues.giveBlack(valueTag));
+            red.put(prefabAbstract.giveRed(columnTag), prefabAbstract.giveRed(rowTag), prefabAbstract.giveBlack(valueTag));
+            black.put(prefabAbstract.giveBlack(columnTag), prefabAbstract.giveBlack(rowTag), prefabAbstract.giveBlack(valueTag));
+            redCopy.put(prefabAbstract.giveRed(columnTag), prefabAbstract.giveRed(rowTag), prefabAbstract.giveBlack(valueTag));
 
             return Tuple.of(red, black, redCopy);
         }

@@ -1,10 +1,9 @@
 module equalsverifier {
 	requires equalsverifier.checkers;
-	requires equalsverifier.checkers.fieldchecks;
-	requires equalsverifier.exceptions;
+	requires equalsverifier.gentype;
 	requires equalsverifier.prefabvalues;
-	requires equalsverifier.prefabvalues.factories;
-	requires equalsverifier.prefabvalues.factoryproviders;
 	requires equalsverifier.utils;
     requires org.objectweb.asm;
+    requires equalsverifier.prefabservice;
+    uses equalsverifier.prefabservice.PrefabAbstract;
 }

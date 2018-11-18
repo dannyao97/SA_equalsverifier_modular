@@ -1,9 +1,9 @@
 package equalsverifier.prefabvalues.factories;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import equalsverifier.exceptions.ReflectionException;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.reflection.ReflectionException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -33,18 +33,18 @@ public abstract class AbstractGenericFactory<T> implements PrefabValueFactory<T>
         return new TypeTag(type, genericTypes.toArray(new TypeTag[genericTypes.size()]));
     }
 
-    protected TypeTag determineAndCacheActualTypeTag(int n, TypeTag tag, PrefabValues prefabValues,
+    protected TypeTag determineAndCacheActualTypeTag(int n, TypeTag tag, PrefabAbstract prefabAbstract,
             LinkedHashSet<TypeTag> typeStack) {
-        return determineAndCacheActualTypeTag(n, tag, prefabValues, typeStack, null);
+        return determineAndCacheActualTypeTag(n, tag, prefabAbstract, typeStack, null);
     }
 
-    protected TypeTag determineAndCacheActualTypeTag(int n, TypeTag tag, PrefabValues prefabValues,
+    protected TypeTag determineAndCacheActualTypeTag(int n, TypeTag tag, PrefabAbstract prefabAbstract,
             LinkedHashSet<TypeTag> typeStack, Class<?> bottomType) {
         TypeTag result = determineActualTypeTagFor(n, tag);
         if (bottomType != null && result.getType().equals(Object.class)) {
             result = new TypeTag(bottomType);
         }
-        prefabValues.realizeCacheFor(result, typeStack);
+        prefabAbstract.realizeCacheFor(result, typeStack);
         return result;
     }
 

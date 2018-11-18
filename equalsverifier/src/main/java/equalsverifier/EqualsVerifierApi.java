@@ -1,10 +1,11 @@
 package equalsverifier;
 
-import equalsverifier.Func.Func1;
-import equalsverifier.Func.Func2;
 import equalsverifier.checkers.*;
-import equalsverifier.exceptions.MessagingException;
+import equalsverifier.gentype.Func.Func1;
+import equalsverifier.gentype.Func.Func2;
 import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.MessagingException;
+import equalsverifier.prefabvalues.PrefabValuesApi;
 import equalsverifier.utils.*;
 import org.objectweb.asm.Type;
 
@@ -368,7 +369,7 @@ public class EqualsVerifierApi<T> {
     }
 
     private String buildErrorMessage(String description) {
-        return Formatter.of(
+        return equalsverifier.utils.Formatter.of(
                 "EqualsVerifier found a problem in class %%.\n-> %%\n\nFor more information, go to: http://www.jqno.nl/equalsverifier/errormessages",
                 type.getSimpleName(),
                 description).format();

@@ -1,11 +1,13 @@
 package equalsverifier.checkers;
 
-
 import equalsverifier.utils.CachedHashCodeInitializer;
-import equalsverifier.utils.Formatter;
 import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Formatter;
+import equalsverifier.utils.Warning;
 
 import java.util.EnumSet;
+
+import static equalsverifier.utils.Assert.*;
 
 public class CachedHashCodeChecker<T> implements Checker {
     private final CachedHashCodeInitializer<T> cachedHashCodeInitializer;

@@ -1,7 +1,7 @@
 package equalsverifier.utils;
 
-import nl.jqno.equalsverifier.internal.reflection.FieldIterable;
-import nl.jqno.equalsverifier.internal.reflection.ObjectAccessor;
+import equalsverifier.reflection.FieldIterable;
+import equalsverifier.reflection.ObjectAccessor;
 
 import java.lang.reflect.Field;
 import java.util.regex.Matcher;

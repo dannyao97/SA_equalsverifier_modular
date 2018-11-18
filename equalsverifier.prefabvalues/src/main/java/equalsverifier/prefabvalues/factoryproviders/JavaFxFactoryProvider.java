@@ -1,9 +1,9 @@
 package equalsverifier.prefabvalues.factoryproviders;
 
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
 import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.PrefabValues;
 import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
 import equalsverifier.prefabvalues.factories.AbstractGenericFactory;
 import equalsverifier.prefabvalues.factories.PrefabValueFactory;
 import equalsverifier.reflection.ConditionalInstantiator;
@@ -62,13 +62,13 @@ public final class JavaFxFactoryProvider implements FactoryProvider {
         }
 
         @Override
-        public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack) {
+        public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack) {
             ConditionalInstantiator ci = new ConditionalInstantiator(fullyQualifiedTypeName);
             TypeTag singleParameterTag = copyGenericTypesInto(parameterRawType, tag);
 
-            T red = ci.instantiate(classes(parameterRawType), objects(prefabValues.giveRed(singleParameterTag)));
-            T black = ci.instantiate(classes(parameterRawType), objects(prefabValues.giveBlack(singleParameterTag)));
-            T redCopy = ci.instantiate(classes(parameterRawType), objects(prefabValues.giveRed(singleParameterTag)));
+            T red = ci.instantiate(classes(parameterRawType), objects(prefabAbstract.giveRed(singleParameterTag)));
+            T black = ci.instantiate(classes(parameterRawType), objects(prefabAbstract.giveBlack(singleParameterTag)));
+            T redCopy = ci.instantiate(classes(parameterRawType), objects(prefabAbstract.giveRed(singleParameterTag)));
 
             return Tuple.of(red, black, redCopy);
         }

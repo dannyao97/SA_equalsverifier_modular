@@ -1,8 +1,8 @@
 package equalsverifier.prefabvalues.factories;
 
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.Tuple;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.Tuple;
 
 import java.util.LinkedHashSet;
 
@@ -17,11 +17,11 @@ public interface PrefabValueFactory<T> {
      * Creates a tuple of two prefab values.
      *
      * @param tag The typetag of the type for which to create values.
-     * @param prefabValues Repository for querying instances of generic types
+     * @param prefabAbstract Repository for querying instances of generic types
      *          of the type tag.
      * @param typeStack A stack of {@link TypeTag}s that require tag in order
      *          to be created. Used for recursion detection.
      * @return A "red" instance of {@code T}.
      */
-    public Tuple<T> createValues(TypeTag tag, PrefabValues prefabValues, LinkedHashSet<TypeTag> typeStack);
+    public Tuple<T> createValues(TypeTag tag, PrefabAbstract prefabAbstract, LinkedHashSet<TypeTag> typeStack);
 }

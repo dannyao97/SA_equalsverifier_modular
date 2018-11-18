@@ -1,7 +1,11 @@
 package equalsverifier.prefabvalues;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import equalsverifier.prefabvalues.factories.*;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabvalues.factories.EnumMapFactory;
+import equalsverifier.prefabvalues.factories.EnumSetFactory;
+import equalsverifier.prefabvalues.factories.ExternalFactory;
+import equalsverifier.prefabvalues.factories.PrefabValueFactory;
 import equalsverifier.reflection.ConditionalInstantiator;
 
 import java.io.File;
@@ -299,7 +303,7 @@ public final class JavaApiPrefabValues {
             new AtomicLongArray(new long[] { 1L }));
         addFactory(AtomicMarkableReference.class, simple(r -> new AtomicMarkableReference(r, true), null));
         addFactory(AtomicReference.class, simple(AtomicReference::new, null));
-        addFactory(AtomicStampedReference.class, Factories.simple(r -> new AtomicStampedReference(r, 0), null));
+        addFactory(AtomicStampedReference.class, simple(r -> new AtomicStampedReference(r, 0), null));
         addFactory(AtomicReferenceArray.class, (tag, pv, stack) -> {
             TypeTag y = tag.getGenericTypes().get(0);
             Object[] red = new Object[] { pv.giveRed(y) };
