@@ -1,11 +1,11 @@
 package equalsverifier.checkers.fieldchecks;
 
-import nl.jqno.equalsverifier.internal.gentype.TypeTag;
-import nl.jqno.equalsverifier.internal.prefabservice.PrefabAbstract;
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
-import nl.jqno.equalsverifier.internal.util.Formatter;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.reflection.FieldAccessor;
+import equalsverifier.utils.Formatter;
 
-import static nl.jqno.equalsverifier.internal.util.Assert.assertTrue;
+import static equalsverifier.utils.Assert.assertTrue;
 
 public class SymmetryFieldCheck implements FieldCheck {
     private final PrefabAbstract prefabAbstract;

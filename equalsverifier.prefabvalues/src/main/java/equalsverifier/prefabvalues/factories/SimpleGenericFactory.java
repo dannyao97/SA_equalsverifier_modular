@@ -3,7 +3,7 @@ package equalsverifier.prefabvalues.factories;
 import equalsverifier.gentype.Func;
 import equalsverifier.gentype.TypeTag;
 import equalsverifier.prefabservice.PrefabAbstract;
-import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabservice.Tuple;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;

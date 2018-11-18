@@ -3,7 +3,7 @@ package equalsverifier.checkers;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import equalsverifier.gentype.TypeTag;
 import equalsverifier.prefabservice.PrefabAbstract;
-import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabservice.Tuple;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.utils.CachedHashCodeInitializer;

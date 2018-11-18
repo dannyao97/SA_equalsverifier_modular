@@ -2,6 +2,7 @@ package equalsverifier.prefabvalues;
 
 import equalsverifier.gentype.TypeTag;
 import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabservice.Tuple;
 import equalsverifier.prefabvalues.factories.FallbackFactory;
 import equalsverifier.prefabvalues.factories.PrefabValueFactory;
 import equalsverifier.reflection.ReflectionException;
@@ -95,7 +96,7 @@ public class PrefabValues extends PrefabAbstract {
      *            parameters.
      * @return A tuple of two different values of the given type.
      */
-
+    @Override
     public <T> Tuple<T> giveTuple(TypeTag tag) {
         realizeCacheFor(tag, emptyStack());
         return cache.getTuple(tag);

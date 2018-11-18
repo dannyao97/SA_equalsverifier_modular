@@ -3,7 +3,7 @@ package equalsverifier.prefabvalues.factories;
 import equalsverifier.gentype.TypeTag;
 import equalsverifier.prefabservice.PrefabAbstract;
 import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabservice.Tuple;
 import equalsverifier.prefabvalues.factoryproviders.FactoryProvider;
 import equalsverifier.reflection.ConditionalInstantiator;
 

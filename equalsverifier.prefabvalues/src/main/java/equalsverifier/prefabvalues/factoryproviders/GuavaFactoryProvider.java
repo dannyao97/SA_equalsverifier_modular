@@ -4,7 +4,7 @@ import com.google.common.collect.*;
 import equalsverifier.gentype.TypeTag;
 import equalsverifier.prefabservice.PrefabAbstract;
 import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.prefabvalues.Tuple;
+import equalsverifier.prefabservice.Tuple;
 import equalsverifier.prefabvalues.factories.AbstractGenericFactory;
 import equalsverifier.prefabvalues.factories.EnumMapFactory;
 import equalsverifier.prefabvalues.factories.EnumSetFactory;

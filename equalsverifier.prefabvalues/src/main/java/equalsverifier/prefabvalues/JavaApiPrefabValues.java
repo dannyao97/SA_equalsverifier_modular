@@ -2,6 +2,7 @@ package equalsverifier.prefabvalues;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.Tuple;
 import equalsverifier.prefabvalues.factories.EnumMapFactory;
 import equalsverifier.prefabvalues.factories.EnumSetFactory;
 import equalsverifier.prefabvalues.factories.ExternalFactory;

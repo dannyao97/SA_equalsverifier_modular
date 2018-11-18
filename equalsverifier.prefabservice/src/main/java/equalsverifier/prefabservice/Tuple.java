@@ -1,4 +1,4 @@
-package equalsverifier.prefabvalues;
+package equalsverifier.prefabservice;
 
 /**
  * Container for three values of the same type: a "red" one, a "black" one, and a shallow copy of the "red" one.

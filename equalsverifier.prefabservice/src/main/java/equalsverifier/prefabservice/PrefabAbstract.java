@@ -13,5 +13,7 @@ public abstract class PrefabAbstract {
 
     public abstract <T> T giveOther(TypeTag tag, T value);
 
+    public abstract <T> Tuple<T> giveTuple(TypeTag tag);
+
     public abstract <T> void realizeCacheFor(TypeTag tag, LinkedHashSet<TypeTag> typeStack);
 }
