@@ -19,36 +19,43 @@
 			<groupId>equalsverifier</groupId>
 			<artifactId>checkers</artifactId>
 			<version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>equalsverifier</groupId>
 			<artifactId>checkers.fieldchecks</artifactId>
 			<version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>equalsverifier</groupId>
 			<artifactId>exceptions</artifactId>
 			<version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>equalsverifier</groupId>
 			<artifactId>prefabvalues</artifactId>
 			<version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
 		</dependency>
         <dependency>
             <groupId>equalsverifier</groupId>
             <artifactId>reflection</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>equalsverifier</groupId>
             <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>equalsverifier</groupId>
             <artifactId>utils</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.ow2.asm</groupId>

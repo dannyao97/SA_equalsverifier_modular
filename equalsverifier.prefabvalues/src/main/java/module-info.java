@@ -19,6 +19,6 @@ module equalsverifier.prefabvalues {
     requires java.desktop;
     requires java.naming;
 
-    requires transitive com.google.common;
+    requires com.google.common;
     requires org.joda.time;
 }

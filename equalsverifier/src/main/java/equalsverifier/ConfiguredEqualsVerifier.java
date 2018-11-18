@@ -4,6 +4,7 @@ import equalsverifier.service.Func.Func1;
 import equalsverifier.service.Func.Func2;
 import equalsverifier.reflection.FactoryCache;
 import equalsverifier.utils.PrefabValuesApi;
+import equalsverifier.service.Warning;
 
 import java.util.Collections;
 import java.util.EnumSet;
