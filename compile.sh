@@ -24,34 +24,24 @@ $JAR --create \
 	--file mods/equalsverifier.checkers.jar \
 	-C classes/equalsverifier.checkers .
 
-echo " > creating equalsverifier.checkers.fieldchecks"
+echo " > creating equalsverifier.gentype"
 $JAVAC \
 	--module-path mods \
-	-d classes/equalsverifier.checkers.fieldchecks \
-	$(find equalsverifier.checkers.fieldchecks -name '*.java')
+	-d classes/equalsverifier.gentype \
+	$(find equalsverifier.gentype -name '*.java')
 $JAR --create \
-	--file mods/equalsverifier.checkers.fieldchecks.jar \
-	-C classes/equalsverifier.checkers.fieldchecks .
+	--file mods/equalsverifier.gentype.jar \
+	-C classes/equalsverifier.gentype .
 
 
-echo " > creating equalsverifier.checkers.beta"
+echo " > creating equalsverifier.prefabservice"
 $JAVAC \
 	--module-path mods \
-	-d classes/equalsverifier.checkers.beta \
-	$(find equalsverifier.checkers.beta -name '*.java')
+	-d classes/equalsverifier.prefabservice \
+	$(find equalsverifier.prefabservice -name '*.java')
 $JAR --create \
-	--file mods/equalsverifier.checkers.beta.jar \
-	-C classes/equalsverifier.checkers.beta .
-
-
-echo " > creating equalsverifier.statistics"
-$JAVAC \
-	--module-path mods \
-	-d classes/equalsverifier.statistics \
-	$(find equalsverifier.statistics -name '*.java')
-$JAR --create \
-	--file mods/equalsverifier.statistics.jar \
-	-C classes/equalsverifier.statistics .
+	--file mods/equalsverifier.prefabservice.jar \
+	-C classes/equalsverifier.prefabservice .
 
 echo " > creating equalsverifier.prefabvalues"
 $JAVAC \
@@ -62,16 +52,27 @@ $JAR --create \
 	--file mods/equalsverifier.prefabvalues.jar \
 	-C classes/equalsverifier.prefabvalues .
 
-echo " > creating equalsverifier.rest"
+echo " > creating equalsverifier.reflection"
 # spark is required as an automatic module, so copy it to mods
 cp libs/spark-core-* mods/spark.core.jar
 $JAVAC \
 	--module-path mods \
-	-d classes/equalsverifier.rest \
-	$(find equalsverifier.rest -name '*.java')
+	-d classes/equalsverifier.reflection \
+	$(find equalsverifier.reflection -name '*.java')
 $JAR --create \
-	--file mods/equalsverifier.rest.jar \
-	-C classes/equalsverifier.rest .
+	--file mods/equalsverifier.reflection.jar \
+	-C classes/equalsverifier.reflection .
+
+echo " > creating equalsverifier.utils"
+# spark is required as an automatic module, so copy it to mods
+cp libs/spark-core-* mods/spark.core.jar
+$JAVAC \
+	--module-path mods \
+	-d classes/equalsverifier.utils \
+	$(find equalsverifier.utils -name '*.java')
+$JAR --create \
+	--file mods/equalsverifier.utils.jar \
+	-C classes/equalsverifier.utils .
 
 echo " > creating equalsverifier"
 $JAVAC \
@@ -80,5 +81,5 @@ $JAVAC \
 	$(find equalsverifier -name '*.java')
 $JAR --create \
 	--file mods/equalsverifier.jar \
-	--main-class equalsverifier.Main \
+	--main-class equalsverifier.equalsverifier \
 	-C classes/equalsverifier .

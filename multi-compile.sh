@@ -30,21 +30,21 @@ $JAR --create \
 	--file mods/equalsverifier.checkers.jar \
 	-C classes/equalsverifier.checkers .
 $JAR --create \
-	--file mods/equalsverifier.checkers.fieldchecks.jar \
-	-C classes/equalsverifier.checkers.fieldchecks .
+	--file mods/equalsverifier.gentype.jar \
+	-C classes/equalsverifier.gentype .
 $JAR --create \
-	--file mods/equalsverifier.checkers.beta.jar \
-	-C classes/equalsverifier.checkers.beta .
-$JAR --create \
-	--file mods/equalsverifier.statistics.jar \
-	-C classes/equalsverifier.statistics .
+	--file mods/equalsverifier.prefabservice.jar \
+	-C classes/equalsverifier.prefabservice .
 $JAR --create \
 	--file mods/equalsverifier.prefabvalues.jar \
 	-C classes/equalsverifier.prefabvalues .
 $JAR --create \
-	--file mods/equalsverifier.rest.jar \
-	-C classes/equalsverifier.rest .
+	--file mods/equalsverifier.reflection.jar \
+	-C classes/equalsverifier.reflection .
+$JAR --create \
+	--file mods/equalsverifier.utils.jar \
+	-C classes/equalsverifier.utils .
 $JAR --create \
 	--file mods/equalsverifier.jar \
-	--main-class equalsverifier.Main \
+	--main-class equalsverifier.equalsverifier \
 	-C classes/equalsverifier .

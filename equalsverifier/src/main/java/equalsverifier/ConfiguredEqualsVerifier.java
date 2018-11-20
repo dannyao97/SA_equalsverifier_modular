@@ -1,9 +1,10 @@
 package equalsverifier;
 
-import equalsverifier.Func.Func1;
-import equalsverifier.Func.Func2;
+import equalsverifier.gentype.Func.Func1;
+import equalsverifier.gentype.Func.Func2;
 import equalsverifier.prefabvalues.FactoryCache;
-import equalsverifier.utils.PrefabValuesApi;
+import equalsverifier.prefabvalues.PrefabValuesApi;
+import equalsverifier.utils.Warning;
 
 import java.util.Collections;
 import java.util.EnumSet;

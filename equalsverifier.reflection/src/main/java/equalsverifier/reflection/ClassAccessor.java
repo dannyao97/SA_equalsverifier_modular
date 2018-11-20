@@ -1,10 +1,9 @@
 package equalsverifier.reflection;
 
-import nl.jqno.equalsverifier.internal.exceptions.ReflectionException;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCache;
-import nl.jqno.equalsverifier.internal.reflection.annotations.NonnullAnnotationVerifier;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.reflection.annotations.AnnotationCache;
+import equalsverifier.reflection.annotations.NonnullAnnotationVerifier;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -19,14 +18,14 @@ import java.util.Set;
  */
 public class ClassAccessor<T> {
     private final Class<T> type;
-    private final PrefabValues prefabValues;
+    private final PrefabAbstract prefabAbstract;
 
     /**
-     * Private constructor. Call {@link #of(Class, PrefabValues)} instead.
+     * Private constructor. Call {@link #of(Class, PrefabAbstract)} instead.
      */
-    ClassAccessor(Class<T> type, PrefabValues prefabValues) {
+    ClassAccessor(Class<T> type, PrefabAbstract prefabAbstract) {
         this.type = type;
-        this.prefabValues = prefabValues;
+        this.prefabAbstract = prefabAbstract;
     }
 
     /**
@@ -35,12 +34,12 @@ public class ClassAccessor<T> {
      * @param <T> The class on which {@link ClassAccessor} operates.
      * @param type The class on which {@link ClassAccessor} operates. Should be
      *          the same as T.
-     * @param prefabValues Prefabricated values with which to fill instantiated
+     * @param prefabAbstract Prefabricated values with which to fill instantiated
      *          objects.
      * @return A {@link ClassAccessor} for T.
      */
-    public static <T> ClassAccessor<T> of(Class<T> type, PrefabValues prefabValues) {
-        return new ClassAccessor<>(type, prefabValues);
+    public static <T> ClassAccessor<T> of(Class<T> type, PrefabAbstract prefabAbstract) {
+        return new ClassAccessor<>(type, prefabAbstract);
     }
 
     /**
@@ -146,7 +145,7 @@ public class ClassAccessor<T> {
      * @return An accessor for T's superclass.
      */
     public ClassAccessor<? super T> getSuperAccessor() {
-        return ClassAccessor.of(type.getSuperclass(), prefabValues);
+        return ClassAccessor.of(type.getSuperclass(), prefabAbstract);
     }
 
     /**
@@ -172,7 +171,7 @@ public class ClassAccessor<T> {
      */
     public ObjectAccessor<T> getRedAccessor(TypeTag enclosingType) {
         ObjectAccessor<T> result = buildObjectAccessor();
-        result.scramble(prefabValues, enclosingType);
+        result.scramble(prefabAbstract, enclosingType);
         return result;
     }
 
@@ -199,8 +198,8 @@ public class ClassAccessor<T> {
      */
     public ObjectAccessor<T> getBlackAccessor(TypeTag enclosingType) {
         ObjectAccessor<T> result = buildObjectAccessor();
-        result.scramble(prefabValues, enclosingType);
-        result.scramble(prefabValues, enclosingType);
+        result.scramble(prefabAbstract, enclosingType);
+        result.scramble(prefabAbstract, enclosingType);
         return result;
     }
 
@@ -223,7 +222,7 @@ public class ClassAccessor<T> {
         for (Field field : FieldIterable.of(type)) {
             if (NonnullAnnotationVerifier.fieldIsNonnull(field, annotationCache) || nonnullFields.contains(field.getName())) {
                 FieldAccessor accessor = result.fieldAccessorFor(field);
-                accessor.changeField(prefabValues, enclosingType);
+                accessor.changeField(prefabAbstract, enclosingType);
             }
         }
         return result;

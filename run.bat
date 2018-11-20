@@ -14,6 +14,6 @@ echo " > run equalsverifier from Maven build"
 echo ""
 rem This version runs the application when built with Maven.
 rem the classpath is needed for Spark's dependencies
-java --module-path mods-mvn --class-path "libs/*" --module equalsverifier/equalsverifier.Main
+java --module-path mods-mvn --class-path "libs/*" --module equalsverifier/equalsverifier.equalsverifier
 
 :end

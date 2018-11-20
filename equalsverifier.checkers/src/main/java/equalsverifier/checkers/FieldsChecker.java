@@ -1,14 +1,14 @@
 package equalsverifier.checkers;
 
-import nl.jqno.equalsverifier.Warning;
-import nl.jqno.equalsverifier.internal.checkers.fieldchecks.*;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.reflection.FieldAccessor;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCache;
-import nl.jqno.equalsverifier.internal.reflection.annotations.SupportedAnnotations;
-import nl.jqno.equalsverifier.internal.util.Configuration;
+import equalsverifier.checkers.fieldchecks.*;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.reflection.FieldAccessor;
+import equalsverifier.reflection.annotations.AnnotationCache;
+import equalsverifier.reflection.annotations.SupportedAnnotations;
+import equalsverifier.utils.Configuration;
+import equalsverifier.utils.Warning;
 
 import java.util.function.Predicate;
 
@@ -27,20 +27,20 @@ public class FieldsChecker<T> implements Checker {
     public FieldsChecker(Configuration<T> config) {
         this.config = config;
 
-        PrefabValues prefabValues = config.getPrefabValues();
+        PrefabAbstract prefabAbstract = config.getPrefabValues();
         TypeTag typeTag = config.getTypeTag();
         Predicate<FieldAccessor> isCachedHashCodeField =
             a -> a.getFieldName().equals(config.getCachedHashCodeInitializer().getCachedHashCodeFieldName());
 
         this.arrayFieldCheck = new ArrayFieldCheck<>(config.getCachedHashCodeInitializer());
         this.floatAndDoubleFieldCheck = new FloatAndDoubleFieldCheck();
-        this.mutableStateFieldCheck = new MutableStateFieldCheck(prefabValues, typeTag, isCachedHashCodeField);
+        this.mutableStateFieldCheck = new MutableStateFieldCheck(prefabAbstract, typeTag, isCachedHashCodeField);
         this.reflexivityFieldCheck = new ReflexivityFieldCheck<>(config);
         this.significantFieldCheck = new SignificantFieldCheck<>(config, isCachedHashCodeField, false);
         this.skippingSignificantFieldCheck = new SignificantFieldCheck<>(config, isCachedHashCodeField, true);
-        this.symmetryFieldCheck = new SymmetryFieldCheck(prefabValues, typeTag);
+        this.symmetryFieldCheck = new SymmetryFieldCheck(prefabAbstract, typeTag);
         this.transientFieldsCheck = new TransientFieldsCheck<>(config);
-        this.transitivityFieldCheck = new TransitivityFieldCheck(prefabValues, typeTag);
+        this.transitivityFieldCheck = new TransitivityFieldCheck(prefabAbstract, typeTag);
     }
 
     @Override

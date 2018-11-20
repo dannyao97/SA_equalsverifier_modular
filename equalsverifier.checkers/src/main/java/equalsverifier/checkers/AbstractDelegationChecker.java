@@ -1,9 +1,9 @@
 package equalsverifier.checkers;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import equalsverifier.prefabvalues.PrefabValues;
-import equalsverifier.prefabvalues.Tuple;
-import equalsverifier.prefabvalues.TypeTag;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabservice.Tuple;
 import equalsverifier.reflection.ClassAccessor;
 import equalsverifier.reflection.FieldIterable;
 import equalsverifier.utils.CachedHashCodeInitializer;
@@ -17,14 +17,14 @@ import static equalsverifier.utils.Assert.fail;
 public class AbstractDelegationChecker<T> implements Checker {
     private final Class<T> type;
     private final TypeTag typeTag;
-    private final PrefabValues prefabValues;
+    private final PrefabAbstract prefabAbstract;
     private final ClassAccessor<T> classAccessor;
     private final CachedHashCodeInitializer<T> cachedHashCodeInitializer;
 
     public AbstractDelegationChecker(Configuration<T> config) {
         this.type = config.getType();
         this.typeTag = config.getTypeTag();
-        this.prefabValues = config.getPrefabValues();
+        this.prefabAbstract = config.getPrefabValues();
         this.classAccessor = config.getClassAccessor();
         this.cachedHashCodeInitializer = config.getCachedHashCodeInitializer();
     }
@@ -35,8 +35,8 @@ public class AbstractDelegationChecker<T> implements Checker {
 
         checkAbstractDelegationInFields();
 
-        T instance = prefabValues.giveRed(typeTag);
-        T copy = prefabValues.giveBlack(typeTag);
+        T instance = prefabAbstract.giveRed(typeTag);
+        T copy = prefabAbstract.giveBlack(typeTag);
         checkAbstractDelegation(instance, copy);
     }
 
@@ -70,7 +70,7 @@ public class AbstractDelegationChecker<T> implements Checker {
 
     private <U> Tuple<U> safelyGetTuple(TypeTag tag) {
         try {
-            return prefabValues.giveTuple(tag);
+            return prefabAbstract.giveTuple(tag);
         }
         catch (Exception ignored) {
             // If it fails for some reason, any reason, just return null so we can skip the test.

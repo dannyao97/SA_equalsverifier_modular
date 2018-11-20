@@ -1,14 +1,14 @@
 package equalsverifier.utils;
 
-import nl.jqno.equalsverifier.Warning;
-import nl.jqno.equalsverifier.internal.prefabvalues.FactoryCache;
-import nl.jqno.equalsverifier.internal.prefabvalues.JavaApiPrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.PrefabValues;
-import nl.jqno.equalsverifier.internal.prefabvalues.TypeTag;
-import nl.jqno.equalsverifier.internal.reflection.ClassAccessor;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCache;
-import nl.jqno.equalsverifier.internal.reflection.annotations.AnnotationCacheBuilder;
-import nl.jqno.equalsverifier.internal.reflection.annotations.SupportedAnnotations;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.PrefabAbstract;
+import equalsverifier.prefabvalues.FactoryCache;
+import equalsverifier.prefabvalues.JavaApiPrefabValues;
+import equalsverifier.prefabvalues.PrefabValues;
+import equalsverifier.reflection.ClassAccessor;
+import equalsverifier.reflection.annotations.AnnotationCache;
+import equalsverifier.reflection.annotations.AnnotationCacheBuilder;
+import equalsverifier.reflection.annotations.SupportedAnnotations;
 
 import java.util.*;
 
@@ -22,7 +22,7 @@ public class Configuration<T> {
     private final EnumSet<Warning> warningsToSuppress;
 
     private final TypeTag typeTag;
-    private final PrefabValues prefabValues;
+    private final PrefabAbstract prefabAbstract;
     private final ClassAccessor<T> classAccessor;
     private final AnnotationCache annotationCache;
     private final Set<String> ignoredFields;
@@ -31,7 +31,7 @@ public class Configuration<T> {
     private final List<T> unequalExamples;
 
     // CHECKSTYLE: ignore ParameterNumber for 1 line.
-    public Configuration(Class<T> type, TypeTag typeTag, ClassAccessor<T> classAccessor, PrefabValues prefabValues,
+    public Configuration(Class<T> type, TypeTag typeTag, ClassAccessor<T> classAccessor, PrefabAbstract prefabAbstract,
                 Set<String> ignoredFields, Set<String> nonnullFields, AnnotationCache annotationCache,
                 CachedHashCodeInitializer<T> cachedHashCodeInitializer, boolean hasRedefinedSuperclass,
                 Class<? extends T> redefinedSubclass, boolean usingGetClass, EnumSet<Warning> warningsToSuppress,
@@ -39,7 +39,7 @@ public class Configuration<T> {
         this.type = type;
         this.typeTag = typeTag;
         this.classAccessor = classAccessor;
-        this.prefabValues = prefabValues;
+        this.prefabAbstract = prefabAbstract;
         this.ignoredFields = ignoredFields;
         this.nonnullFields = nonnullFields;
         this.annotationCache = annotationCache;
@@ -61,13 +61,13 @@ public class Configuration<T> {
 
         TypeTag typeTag = new TypeTag(type);
         FactoryCache cache = JavaApiPrefabValues.build().merge(factoryCache);
-        PrefabValues prefabValues = new PrefabValues(cache);
-        ClassAccessor<T> classAccessor = ClassAccessor.of(type, prefabValues);
+        PrefabAbstract prefabAbstract = new PrefabValues(cache);
+        ClassAccessor<T> classAccessor = ClassAccessor.of(type, prefabAbstract);
         AnnotationCache annotationCache = buildAnnotationCache(type, ignoredAnnotationDescriptors);
         Set<String> ignoredFields = includedFields.isEmpty() ? excludedFields : invertIncludedFields(actualFields, includedFields);
         List<T> unequals = ensureUnequalExamples(typeTag, classAccessor, unequalExamples);
 
-        return new Configuration<>(type, typeTag, classAccessor, prefabValues, ignoredFields, nonnullFields, annotationCache,
+        return new Configuration<>(type, typeTag, classAccessor, prefabAbstract, ignoredFields, nonnullFields, annotationCache,
             cachedHashCodeInitializer, hasRedefinedSuperclass, redefinedSubclass, usingGetClass, warningsToSuppress, equalExamples, unequals);
     }
 
@@ -139,8 +139,8 @@ public class Configuration<T> {
         return typeTag;
     }
 
-    public PrefabValues getPrefabValues() {
-        return prefabValues;
+    public PrefabAbstract getPrefabValues() {
+        return prefabAbstract;
     }
 
     public ClassAccessor<T> getClassAccessor() {

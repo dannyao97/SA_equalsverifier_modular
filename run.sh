@@ -17,7 +17,7 @@ then
 	$JAVA \
 		--module-path mods-mvn \
 		--class-path "libs/*" \
-		--module equalsverifier/equalsverifier.Main
+		--module equalsverifier/equalsverifier.equalsverifier
 else
 # the classpath is needed for Spark's dependencies
 	$JAVA \

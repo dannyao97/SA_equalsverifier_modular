@@ -1,6 +1,6 @@
 package equalsverifier.utils;
 
-import nl.jqno.equalsverifier.internal.reflection.FieldIterable;
+import equalsverifier.reflection.FieldIterable;
 
 import java.lang.reflect.Field;
 import java.util.Collections;

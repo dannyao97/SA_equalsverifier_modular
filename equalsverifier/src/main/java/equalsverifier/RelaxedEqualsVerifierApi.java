@@ -1,5 +1,7 @@
 package equalsverifier;
 
+import equalsverifier.utils.Warning;
+
 import java.util.List;
 
 import static equalsverifier.utils.ListBuilders.buildListOfAtLeastOne;

@@ -1,8 +1,8 @@
 package equalsverifier.utils;
 
-import nl.jqno.equalsverifier.internal.exceptions.ReflectionException;
-import nl.jqno.equalsverifier.internal.reflection.FieldIterable;
-import nl.jqno.equalsverifier.internal.reflection.SuperclassIterable;
+import equalsverifier.reflection.FieldIterable;
+import equalsverifier.reflection.ReflectionException;
+import equalsverifier.reflection.SuperclassIterable;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

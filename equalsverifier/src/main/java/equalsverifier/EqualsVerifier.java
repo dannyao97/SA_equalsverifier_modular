@@ -1,7 +1,7 @@
 package equalsverifier;
 
-
 import equalsverifier.utils.ListBuilders;
+import equalsverifier.utils.Warning;
 
 import java.util.List;
 

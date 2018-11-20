@@ -1,11 +1,13 @@
 package equalsverifier.prefabvalues;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.EnumMapFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.EnumSetFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.ExternalFactory;
-import nl.jqno.equalsverifier.internal.prefabvalues.factories.PrefabValueFactory;
-import nl.jqno.equalsverifier.internal.reflection.ConditionalInstantiator;
+import equalsverifier.gentype.TypeTag;
+import equalsverifier.prefabservice.Tuple;
+import equalsverifier.prefabvalues.factories.EnumMapFactory;
+import equalsverifier.prefabvalues.factories.EnumSetFactory;
+import equalsverifier.prefabvalues.factories.ExternalFactory;
+import equalsverifier.prefabvalues.factories.PrefabValueFactory;
+import equalsverifier.reflection.ConditionalInstantiator;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -25,9 +27,9 @@ import java.util.concurrent.locks.StampedLock;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
 
-import static nl.jqno.equalsverifier.internal.prefabvalues.factories.Factories.*;
-import static nl.jqno.equalsverifier.internal.reflection.Util.classes;
-import static nl.jqno.equalsverifier.internal.reflection.Util.objects;
+import static equalsverifier.prefabvalues.factories.Factories.*;
+import static equalsverifier.reflection.Util.classes;
+import static equalsverifier.reflection.Util.objects;
 
 /**
  * Creates instances of classes for use in a {@link PrefabValues} object.
