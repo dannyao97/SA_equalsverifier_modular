@@ -1,6 +1,7 @@
 package equalsverifier.integration.extra_features;
 
 import equalsverifier.EqualsVerifier;
+
 import equalsverifier.utils.Warning;
 import equalsverifier.integration.extra_features.nonnull.findbugs1x.custom.NonnullFindbugs1xCustomOnPackage;
 import equalsverifier.integration.extra_features.nonnull.findbugs1x.custom.NonnullFindbugs1xWithCheckForNullOnPackage;
@@ -265,7 +266,8 @@ public class AnnotationNonnullTest extends ExpectedExceptionTestBase {
     static final class NonnullManualMissedOne {
         @Nonnull
         private final Object o;
-        // No annotation
+
+         //No annotation
         private final Object noAnnotation;
         @Nonnull
         private final Object q;

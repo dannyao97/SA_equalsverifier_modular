@@ -16,7 +16,7 @@ public class UtilTest {
 
     @Test
     public void forNameReturnsClass_whenTypeExists() {
-        Class<?> actual = Util.classForName("java.utils.GregorianCalendar");
+        Class<?> actual = Util.classForName("java.util.GregorianCalendar");
         assertEquals(actual, GregorianCalendar.class);
     }
 
