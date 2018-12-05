@@ -9,7 +9,6 @@ module equalsverifier.prefabvalues {
     requires com.google.common;
     requires java.naming;
     requires org.joda.time;
-    requires java.datatransfer;
     requires java.desktop;
     provides equalsverifier.prefabservice.PrefabAbstract with equalsverifier.prefabvalues.PrefabValues;
 
