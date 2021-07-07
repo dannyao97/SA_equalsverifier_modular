@@ -31,6 +31,7 @@ public class CoverageNonnullTest {
      *     }
      * }
      */
+
      //CHECKSTYLE: ignore LocalFinalVariableName for 30 lines.
      //CHECKSTYLE: ignore NeedBraces for 30 lines.
     public static final class LombokNonnullStringContainer {

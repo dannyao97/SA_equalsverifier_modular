@@ -282,3 +282,4 @@ public class AnnotationCacheBuilderTest {
     @AnnotationWithClassValues(annotations={ Nonnull.class, NotNull.class })
     private static class AnnotationWithClassValuesContainer {}
 }
+
